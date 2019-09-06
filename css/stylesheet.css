@@ -10,11 +10,11 @@ body {
     padding: 10px;
 
 }
-#Midtstill{
-    text-align:center;
+#midtstilt {
+    text-align: center;
     border-bottom: 1px solid black;
 }
-header>ul>li {
+header>div>ul>li {
     list-style-type: none;
 }
 h1,h2,h3,h4,h5,h6{
