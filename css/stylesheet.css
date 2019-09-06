@@ -6,3 +6,6 @@ body{
     margin-right: auto;
     border: 1px solid black;
 }
+header>h2>ul>li {
+    list-style-type: none;
+}
