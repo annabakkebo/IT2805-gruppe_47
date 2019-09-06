@@ -1,12 +1,13 @@
 html{
     background-color: orange;
 }
-body{
+body {
     background-color: beige;
     min-width: 500px;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 
 }
 header>ul>li {
