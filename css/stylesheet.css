@@ -1,10 +1,13 @@
-body{
+html{
     background-color: orange;
+}
+body{
+    background-color: beige;
     min-width: 500px;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    border: 10px solid black;
+
 }
 header>ul>li {
     list-style-type: none;
