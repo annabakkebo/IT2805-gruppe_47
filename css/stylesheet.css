@@ -1,5 +1,10 @@
 html{
-    background-color: orange;
+    background-image: url("../img/background.jpg");
+     background-color: orange;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 body {
     background-color: beige;
