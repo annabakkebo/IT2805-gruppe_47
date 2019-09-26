@@ -4,19 +4,25 @@ body {
 
 h1 {
     font-size: 30px;
+    font-color: rgb(164,52,26);
 }
 
 h2 {
     font-size: 24px;
+    font-color: rgb(164,52,26);
 }
 
 h3 {
     font-size: 22px;
+    font-color: rgb(164,52,26);
+
 }
 
 h4, h5, h6 {
     font-size: 20px;
+    font-color: rgb(164,52,26);
 }
+
 p{
     font-size: 18px;
     font-color: rgb(59,56,56);
