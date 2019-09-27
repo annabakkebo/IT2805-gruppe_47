@@ -1,3 +1,11 @@
-<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
-	<line x1="0" y1="100" x2="200" y2="100" style="stroke:rgb(255,0,0);stroke-width:4px;"/>
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+	<line x1="0" y1="150" x2="300" y2="150" style="stroke:rgb(164,52,26);stroke-width:10px;"/>
+	<line x1="0" y1="150" x2="0" y2="75" style="stroke:rgb(164,52,26);stroke-width:10px;"/>
+	<line x1="300" y1="150" x2="300" y2="75" style="stroke:rgb(164,52,26);stroke-width:10px;"/>
+	<line x1="0" y1="76" x2="76" y2="0" style="stroke:rgb(164,52,26);stroke-width:5px;"/>
+	<line x1="300" y1="76" x2="224" y2="0" style="stroke:rgb(164,52,26);stroke-width:5px;"/>
+	<line x1="74" y1="0" x2="226" y2="0" style="stroke:rgb(164,52,26);stroke-width:10px;"/>
+
+	<text x="150" y="65" text-anchor="middle" font-size="80" fill="rgb(164,52,26)">La</text>
+	<text x="150" y="130" text-anchor="middle" font-size="80" fill="rgb(164,52,26)">Escuela</text>
 </svg>
