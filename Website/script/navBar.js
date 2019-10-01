@@ -22,7 +22,7 @@ function loadNavBar(){
         ['about/contact.html','Contact us','Kontakt oss'],['about/blog.html','Blog','Aktuelt'],
         ['about/calendar.html','Calendar','Kalender'],['img/logo.svg','index.html','Home','Hjem']];
     var directories = ['admission','about'];
-    function changeUrl(urlLink,placeNumb){
+    /*function changeUrl(urlLink,placeNumb){
         var a=urlLink[0].split('/');
         console.log(a[0]);
         console.log(a[0]==y);
@@ -36,7 +36,7 @@ function loadNavBar(){
     if (y==='about' || y==='admission'){
         menuElement[5] = ['../img/logo.svg','../index.html','Home','Hjem']
     }
-    menuElement.slice(0,-1).forEach(changeUrl);
+    menuElement.slice(0,-1).forEach(changeUrl);*/
 
     var listMain = document.createElement('UL');
     var listElm = document.createElement('LI');
