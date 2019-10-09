@@ -3,9 +3,9 @@ var images = [];
 var time = 3000;
 
 // Image list
-images[0]='image1.jpg';
-images[1]='image2.jpg';
-images[2]='image3.jpg';
+images[0]='img/football.jpg';
+images[1]='img/library.jpg';
+images[2]='swing.jpg';
 
 // Change image
 function changeImg(){
