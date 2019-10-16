@@ -1,24 +1,17 @@
-var i=0;
-var images = [];
-var time = 3000;
+function loadSlideshow(){
+  var i;
+  var root = document.querySelector('.fadein');
+  var els = root.querySelectorAll(':not(:first-child)');
 
-// Image list
-images[0]='img/football.jpg';
-images[1]='img/library.jpg';
-images[2]='img/swing.jpg';
-
-// Change image
-function changeImg(){
-    document.slide.src= images[i];
-
-    if(i<images.length-1){
-        i++;
-    }
-    else{
-        i=0;
-    }
-
-    setTimeout("changeImg()", time);
+  for (i=0; i < els.length; i++) {
+    els[i].classList.add('is-hidden');
+  }
+  root.addEventListener('transitionend', function(){
+    root.insertBefore(root.querySelector(':first-child.is-hidden'), null);
+  });
+  setInterval(function(){
+    root.querySelector(':first-child').classList.add('is-hidden');
+    root.querySelector(':nth-child(2)').classList.remove('is-hidden');
+  }, 3000)
 }
 
-window.onload=changeImg;
