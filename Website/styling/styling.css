@@ -30,3 +30,24 @@ p{
 h1, h2, h3, h4, h5, h6, p{
     color: rgb(59,56,56);
 }
+#slideshow{
+    position: fixed;
+}
+.fadein {
+    position:relative;
+    margin-left: 100px;
+    width: 50%;
+    height:332px;
+    width:500px;
+    outline: 1px solid blue;
+}
+.fadein img {
+    position:absolute;
+    left:0; top:0;
+    transition:opacity 1s;
+    opacity:1;
+}
+
+.fadein img.is-hidden {
+    opacity:0;
+}
