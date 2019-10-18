@@ -58,5 +58,12 @@ function displayCal(small){
 function fillCal (year,month){
     var tab = document.getElementById('calTab');
     var daysOfMonth = daysInMonth(year,month);
-
+    var lastDateBef = daysInMonth(year,month-1);
+    var firstDateMonthDay = new Date(year,month).getDay();
+    var dayNumb = 1;
+    while(dayNumb<daysOfMonth){
+        for (var j=0;j<6;j++){
+            if (j<firstDateMonthDay && )
+        }
+    }
 }
