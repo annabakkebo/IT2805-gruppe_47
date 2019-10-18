@@ -13,5 +13,5 @@ function loadSlideshow(){
     root.querySelector(':first-child').classList.add('is-hidden');
     root.querySelector(':nth-child(2)').classList.remove('is-hidden');
   }, 3000)
-}
+};
 
