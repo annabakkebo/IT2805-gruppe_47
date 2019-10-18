@@ -24,8 +24,11 @@
     <label>Birthdate:
   	<input type="date" name="birthdate" min = "2000-12-31" required></label>
     <label>Gender:
-  	<input type="radio" name="gender" value ="male" required> Male
-	<input type="radio" name="gender" value ="female" required> Female<br></label>
+  	<select id = "gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+	<br></label>
     <p>If transfering, which school(s) has the child attended in the past?</p>
     <textarea rows="5" cols="50" name ="previous school">
 
