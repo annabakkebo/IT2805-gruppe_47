@@ -8,11 +8,16 @@ function genCal(date){
     var year = date.getFullYear();
     var monthStart = new Date(year,month).getDay();
     var daysOfMonth = daysInMonth(year,month);
+    var daysOfPrevMonth = daysInMonth(year,month-1);
     var amountOfRows = math.trunc((daysOfMonth+monthStart)/6)+1;
     var daysArray=[];
-    for (var i =1;i<monthStart,,i++){
-        daysArray.append
+    for (var i =1;i<monthStart;i++){
+        daysArray.push(daysOfPrevMonth-i);
     }
+    var (var i = 1;i<daysOfMonth;i++){
+        daysArray.push(i);
+    }
+    console.log(daysArray)
     var daysinWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
     var monthArray = [daysinWeek];
     for(var i=0;i<amountOfRows;i++){
