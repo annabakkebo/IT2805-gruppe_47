@@ -51,3 +51,18 @@ h1, h2, h3, h4, h5, h6, p{
 .fadein img.is-hidden {
     opacity:0;
 }
+
+form {
+width: 35%;
+padding-top: 10px;
+padding-left: 10px;
+margin-left: auto;
+margin-right:auto;
+background-color:rgb(169,209,142, 0.58);
+border-style: solid;
+border-width: 2px;
+}
+
+input {
+width 10%;
+}
