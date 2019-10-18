@@ -12,21 +12,23 @@
 </head>
 <body>
 <div id="wrapper"></div>
-<h1>Admission form</h1>
-<p> The future pupil</p>
-<p> Enter your admission information below</p>
+
 <form id ="myForm" action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
-    <label>First name:<br>
-  	<input type="text" name="fname" placeholder="First name" pattern="[A-Za-z]+" required><br></label>
-    <label>Middle name:<br>
-  	<input type="text" name="mname" placeholder="Middle name" pattern="[A-Za-z]+"><br></label>
-    <label>Last name:<br>
+    <h1>Admission form</h1>
+    <p> Enter your admission information below</p>
+    <p> The future pupil</p>
+    <label>Name:
+  	<input type="text" name="fname" placeholder="First name" pattern="[A-Za-z]+" required>
+  	<input type="text" name="mname" placeholder="Middle name" pattern="[A-Za-z]+"></label>
   	<input type="text" name="lname" placeholder="Last name" pattern="[A-Za-z]+"><br></label>
-    <label>Birthdate:<br>
-  	<input type="date" name="birthdate" min = "2000-12-31" required><br></label>
-    <label>Gender:<br>
-  	<input type="radio" name="gender" value ="male" required> Male<br>
-	<input type="radio" name="gender" value ="female" required> Female<br></label>
+    <label>Birthdate:
+  	<input type="date" name="birthdate" min = "2000-12-31" required></label>
+    <label>Gender:
+  	<select id = "gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+	<br></label>
     <p>If transfering, which school(s) has the child attended in the past?</p>
     <textarea rows="5" cols="50" name ="previous school">
 
@@ -37,12 +39,10 @@
     </textarea><br>
 
      <p>Your contact information</p>
-    <label>First name:<br>
-  	<input type="text" name="parent fname" placeholder="First name" pattern="[A-Za-z]+" required><br></label>
-    <label>Middle name:<br>
-  	<input type="text" name="parent mname" placeholder="Middle name" pattern="[A-Za-z]+"><br></label>
-    <label>Last name:<br>
-  	<input type="text" name="parent lname" placeholder="Last name" pattern="[A-Za-z]+"><br></label>
+    <label>Name:
+  	<input type="text" name="parent fname" placeholder="First name" pattern="[A-Za-z]+" required>
+  	<input type="text" name="parent mname" placeholder="Middle name" pattern="[A-Za-z]+">
+  	<input type="text" name="parent lname" placeholder="Last name" pattern="[A-Za-z]+" required><br></label>
     <label>E-mail:<br>
   	<input type="email" name="email" placeholder="example@example.com" required><br></label>
     <label>Telephone:<br> <input type="tel" name="telephone" placeholder="Number" required><br></label>
