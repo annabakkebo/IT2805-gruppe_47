@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     <!--Following base tag makes sure that all relative links will be relative to the main page-->
-    <base href="https://folk.ntnu.no/endresr/laescuela/Website/index.html">
+    <base href="http://localhost:63342/IT2805-gruppe_47/Website/index.html">
     <meta charset="UTF-8">
     <title>Calendar</title>
     <link rel="stylesheet" type="text/css" href="styling/styling.css">
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <script src="script/navBar.js"></script>
+    <script src="script/calendar.js"></script>
     <link rel="icon" href="img/icon.png">
 
 </head>
 <body>
-<div id="wrapper"></div>
+<div id="wrapper">
+    <div id="calElmt"></div>
+    <script> displayCal(false)</script>
+</div>
 </body>
 </html>
