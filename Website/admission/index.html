@@ -9,9 +9,47 @@
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <script src="script/navBar.js"></script>
     <link rel="icon" href="img/icon.png">
-
 </head>
 <body>
 <div id="wrapper"></div>
+
+<h1>Admission form</h1>
+<p> The future pupil</p>
+<p> Enter your admission information below</p>
+<form id ="myForm" action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+    <label>First name:<br>
+  	<input type="text" name="fname" placeholder="First name" pattern="[A-Za-z]+" required><br></label>
+    <label>Middle name:<br>
+  	<input type="text" name="mname" placeholder="Middle name" pattern="[A-Za-z]+"><br></label>
+    <label>Last name:<br>
+  	<input type="text" name="lname" placeholder="Last name" pattern="[A-Za-z]+"><br></label>
+    <label>Birthdate:<br>
+  	<input type="date" name="birthdate" min = "2000-12-31" required><br></label>
+    <label>Gender:<br>
+  	<input type="radio" name="gender" value ="male" required> Male<br>
+	<input type="radio" name="gender" value ="female" required> Female<br></label>
+    <p>If transfering, which school(s) has the child attended in the past?</p>
+    <textarea rows="5" cols="50" name ="previous school">
+
+    </textarea><br>
+    <p>Why do you want your child to attend our school?</p>
+    <textarea rows="5" cols="50" name ="why change?">
+
+    </textarea><br>
+
+     <p>Your contact information</p>
+    <label>First name:<br>
+  	<input type="text" name="parent fname" placeholder="First name" pattern="[A-Za-z]+" required><br></label>
+    <label>Middle name:<br>
+  	<input type="text" name="parent mname" placeholder="Middle name" pattern="[A-Za-z]+"><br></label>
+    <label>Last name:<br>
+  	<input type="text" name="parent lname" placeholder="Last name" pattern="[A-Za-z]+"><br></label>
+    <label>E-mail:<br>
+  	<input type="email" name="email" placeholder="example@example.com" required><br></label>
+    <label>Telephone:<br> <input type="tel" name="telephone" placeholder="Number" required><br></label>
+    <input type="submit" value="Submit">
+
+
+    </form>
 </body>
 </html>
