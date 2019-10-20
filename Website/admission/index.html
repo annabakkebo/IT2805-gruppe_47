@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="../styling/styling.css">
     <!--Following base tag makes sure that all relative links will be relative to the main page-->
     <base href="https://folk.ntnu.no/endresr/laescuela/Website/index.html">
     <meta charset="UTF-8">
     <title>Admission</title>
+    <link rel="stylesheet" type="text/css" href="styling/styling.css">
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <link rel="stylesheet" type="text/css" href="styling/footer.css">
     <script src="script/navBar.js"></script>
@@ -15,6 +15,44 @@
 </head>
 <body>
 <div id="wrapper"></div>
+
+<form id ="myForm" action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+    <h1>Admission form</h1>
+    <p> Enter your admission information below</p>
+    <p> The future pupil</p>
+    <label>Name:
+  	<input type="text" name="fname" placeholder="First name" pattern="[A-Za-z]+" required>
+  	<input type="text" name="mname" placeholder="Middle name" pattern="[A-Za-z]+"></label>
+  	<input type="text" name="lname" placeholder="Last name" pattern="[A-Za-z]+"><br></label>
+    <label>Birthdate:
+  	<input type="date" name="birthdate" min = "2000-12-31" required></label>
+    <label>Gender:
+  	<select id = "gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+	<br></label>
+    <p>If transfering, which school(s) has the child attended in the past?</p>
+    <textarea rows="5" cols="50" name ="previous school">
+
+    </textarea><br>
+    <p>Why do you want your child to attend our school?</p>
+    <textarea rows="5" cols="50" name ="why change?">
+
+    </textarea><br>
+
+     <p>Your contact information</p>
+    <label>Name:
+  	<input type="text" name="parent fname" placeholder="First name" pattern="[A-Za-z]+" required>
+  	<input type="text" name="parent mname" placeholder="Middle name" pattern="[A-Za-z]+">
+  	<input type="text" name="parent lname" placeholder="Last name" pattern="[A-Za-z]+" required><br></label>
+    <label>E-mail:<br>
+  	<input type="email" name="email" placeholder="example@example.com" required><br></label>
+    <label>Telephone:<br> <input type="tel" name="telephone" placeholder="Number" required><br></label>
+    <input type="submit" value="Submit">
+
+
+    </form>
 <script>loadFooter()</script>
 </body>
 </html>
