@@ -1,0 +1,41 @@
+footer{
+    position: relative;
+    width:calc(100% - 20px);
+    background-color: rgb(84,130,53);
+    padding: 10px;
+}
+footer a {
+    color: rgb(59,56,56);
+    text-decoration: none;
+}
+
+footer > ul{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+footer ul> li{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer >ul>li>ul>li , footer >ul>li>ul{
+    display: block;
+    padding:0;
+}
+
+#adress, #adress >li{
+    display: table;
+    left:0%;
+    transform: translateX(0%);
+}
+#adress{
+    margin-left:auto;
+    margin-right: auto;
+}
