@@ -1,12 +1,13 @@
 function loadFooter() {
-    var footer = document.createElement("div");
-    footer.id = 'footer';
+    var divfooter = document.createElement("div");
+    divfooter.id = 'footer';
+    var footer = document.createElement("footer");
     var links = [
-        ['index.html', 'Home', 'Hjem'],
-        ['admission/index.html','Admission','Opptak'],
-        ['about/index.html','About us','Om oss'],
-        ['about/blog.html','Blog','Aktuelt'],
-        ['about/calendar.html','Calendar','Kalender']
+        ['index.html', 'Home'],
+        ['admission/index.html','Admission'],
+        ['about/index.html','About us'],
+        ['about/blog.html','Blog'],
+        ['about/calendar.html','Calendar']
     ];
     var linkListMain = document.createElement('ul');
     for(const element of links){
@@ -18,11 +19,8 @@ function loadFooter() {
         linkElm.innerHTML=element[1];
         listElm.appendChild(linkElm);
         linkListMain.appendChild(listElm);
-        console.log(linkElm);
-        console.log(linkListMain);
     }
     footer.appendChild(linkListMain);
-    console.log(footer);
 
 
     var adress = ['Vei veiesen 123','123 Sted','0047 123 45 678'];
@@ -33,18 +31,19 @@ function loadFooter() {
         listElm.innerHTML = element;
         listAdress.appendChild(listElm);
     }
-    var listElm =document.createElement('ul');
+    var listElm =document.createElement('li');
     var linkElm = document.createElement('a');
     linkElm.setAttribute('href', 'mailto:post@laescuela.no');
+    linkElm.setAttribute('style','text-align:left;');
     linkElm.innerHTML= 'post@laescuela';
     listElm.appendChild(linkElm);
     listAdress.appendChild(listElm);
 
-    console.log(listAdress);
-    footer.appendChild(listAdress);
 
-    console.log(footer);
+    footer.appendChild(listAdress);
+    divfooter.appendChild(footer);
+
 
     var doc = document.getElementById('wrapper');
-    doc.insertAdjacentElement("afterend", footer);
+    doc.insertAdjacentElement("afterend", divfooter);
 }

@@ -1,0 +1,32 @@
+footer{
+    position: relative;
+    width:100%;
+    background-color: rgb(84,130,53);
+}
+footer a {
+    color: rgb(59,56,56);
+    text-decoration: none;
+}
+footer ul> li{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+}
+footer > ul{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+}
+
+#adress, #adress >li{
+    display: table;
+    left:0%;
+    transform: translateX(0%);
+}
+#adress{
+    margin-left:auto;
+    margin-right: auto;
+}
