@@ -1,17 +1,14 @@
 footer{
     position: relative;
-    width:100%;
+    width:calc(100%-20px);
     background-color: rgb(84,130,53);
+    padding: 10px;
 }
 footer a {
     color: rgb(59,56,56);
     text-decoration: none;
 }
-footer ul> li{
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline-block;
-}
+
 footer > ul{
     display: inline-block;
     position: relative;
@@ -19,6 +16,18 @@ footer > ul{
     transform: translateX(-50%);
     margin: 0;
     padding: 0;
+}
+
+footer ul> li{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+footer >ul>li>ul>li , footer >ul>li>ul{
+    display: block;
+    padding:0;
 }
 
 #adress, #adress >li{
