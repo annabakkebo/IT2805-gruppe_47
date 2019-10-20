@@ -5,7 +5,12 @@ body {
     height: 100%;
     background-color: rgb(242,242,242, 0.58);
 }
+#wrapper{
+    width:800px;
+    margin-right: auto;
+    margin-left: auto;
 
+}
 h1 {
     font-size: 30px;
 }
@@ -76,4 +81,22 @@ resize: none;
 
 input[type=submit] {
 background-color:rgb(164,52,26, 0.8);
+}
+
+/*Css for calendar*/
+#eventWrapper {
+    display:block;
+}
+.dateEvent {
+    display: inline-block;
+}
+.titleEvent {
+    display: inline-block;
+    cursor:pointer;
+}
+.event {
+    border-bottom: 1px solid gray;
+}
+.descEvent {
+
 }
