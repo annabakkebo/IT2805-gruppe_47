@@ -6,7 +6,10 @@ body {
     background-color: rgba(242,242,242, 0.58);
     color: rgb(59,56,56);
 }
-
+#wrapper{
+    padding-top: 62px;
+    min-height: 100%;
+}
 h1 {
     font-size: 30px;
 }

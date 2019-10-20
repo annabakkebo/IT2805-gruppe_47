@@ -1,6 +1,6 @@
 footer{
     position: relative;
-    width:calc(100%-20px);
+    width:calc(100% - 20px);
     background-color: rgb(84,130,53);
     padding: 10px;
 }
