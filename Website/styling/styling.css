@@ -15,7 +15,7 @@ body {
 
 #wrapper {
     display: block;
-    height: calc(100% - 146px - 63px);
+    min-height: calc(100% - 146px - 63px);
 }
 
 h1 {
