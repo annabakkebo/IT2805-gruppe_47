@@ -55,6 +55,7 @@ function displayCal(small){
     mainFrame.appendChild(dayRow);
     calElmt.appendChild(mainFrame);
 }
+/*
 function fillCal (year,month){
     var tab = document.getElementById('calTab');
     var daysOfMonth = daysInMonth(year,month);
@@ -65,5 +66,37 @@ function fillCal (year,month){
         for (var j=0;j<6;j++){
             if (j<firstDateMonthDay && )
         }
+    }
+}*/
+
+function makeCal(year,month,small=false){
+    var tab = document.getElementById('calTab');
+    var daysOfMonth = daysInMonth(year,month);
+    var lastDateBef = daysInMonth(year,month-1);
+    var firstDateMonthDay = new Date(year,month).getDay() || 7;//This returns 7 if sunday
+    var dateArray = []
+    for (var i=firstDateMonthDay;i>1;i--){
+        dateArray.push(lastDateBef-i+2);
+    }
+    for (var i=1;i<daysOfMonth+1;i++){
+        dateArray.push(i)
+    }
+    var len = 7-dateArray.length%7
+    for (var i=0;i<len;i++){
+        dateArray.push(i+1)
+    }
+    return dateArray
+}
+
+// ListDisplay
+
+function toggleEvDisp(elmt){
+    var b = elmt.parentElement;
+    var a = b.querySelector('.descEvent');
+    if (a.style.display==="none"){
+        a.style.display='block'
+    }
+    else {
+        a.style.display='none'
     }
 }
