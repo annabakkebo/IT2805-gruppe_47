@@ -17,19 +17,6 @@ function loadSlideshow() {
 };
 
 
-/*
-<div id="slideshow" >
-  <div class="fadein" >
-      <img src="img/football.jpg">
-      <img src="img/library.jpg">
-      <img src="img/stroll.jpg">
-      <img src="img/study.jpg">
-      <img src="img/swing.jpg">
-      <img src="img/swing2.jpg">
-  </div>
-  <script> loadSlideshow()</script>
-</div>
-*/
 
 function loadSlideshow1() {
     var imageList = ['img/football.jpg', 'img/library.jpg', 'img/stroll.jpg', 'img/study.jpg', 'img/swing.jpg', 'img/swing2.jpg'];
@@ -40,8 +27,10 @@ function loadSlideshow1() {
     for(const element of imageList){
         var image= document.createElement('img');
         image.setAttribute('src',element);
+        image.classList.add('is-hidden');
         fadein.appendChild(image);
     }
+    fadein.querySelector(':nth-child(1)').classList.remove('is-hidden');
     slideshow.insertAdjacentElement("afterend", fadein);
     fadein.addEventListener('transitionend',function () {
         fadein.insertBefore(fadein.querySelector(':first-child.is-hidden'),null);
