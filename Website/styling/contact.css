@@ -1,0 +1,41 @@
+#column1{
+    position:relative;
+    width:calc(50% - 50px);
+    float:left;
+}
+#column2{
+    position:relative;
+    width:calc(50% - 50px);
+    float:right;
+}
+
+.employeeList>li:nth-child(even):before{
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url("../img/Person1.png");
+    background-size: contain;
+    margin-bottom: -60px;
+    margin-left: -30px;
+}
+
+.employeeList>li:nth-child(odd):before{
+    content: '';
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url("../img/Person2.png");
+    background-size: contain;
+    margin-bottom: -60px;
+    margin-left: -30px;
+}
+
+.employeeListElm{
+    columns: 1;
+    list-style: none;
+    margin-left: 50px;
+}
+.employeeListElm>ul>li{
+    list-style: none;
+}
