@@ -29,7 +29,6 @@ h2 {
 
 h3 {
     font-size: 22px;
-
 }
 
 h4, h5, h6 {
@@ -90,3 +89,46 @@ textarea {
 input[type=submit] {
     background-color: rgb(164, 52, 26, 0.8);
 }
+
+#liste1 {
+    list-style: none;
+    padding-left: 0;
+}
+
+#liste1 li {
+    margin-bottom: 80px;
+    position: relative;
+    padding-left: 100px;
+    border-bottom: 1.5px solid grey;
+}
+
+#liste1 li.rektor:before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-image: url('../img/icon.png');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#liste1 li.school:before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-image: url('../img/swing.jpg');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#liste1 .BOS {
+     padding-bottom: 35px;
+}
+
