@@ -102,45 +102,70 @@ input[type=submit] {
     text-indent: 20px;
 }
 
-#liste1 {
-    list-style: none;
-    padding-left: 0;
-}
-
-#liste1 li {
-    margin-bottom: 80px;
+#wrapper #overskrift {
     position: relative;
-    padding-left: 100px;
-    border-bottom: 1.5px solid grey;
 }
 
-#liste1 li.rektor:before {
-    content: '';
-    width: 80px;
-    height: 80px;
+#wrapper #overskrift h2 {
+    margin: 0;
     position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+    font-size: 45px;
+}
+
+#blogtable {
+    padding-top: 70px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: white;
+    border-collapse:separate;
+    border-spacing:0 10px;
+}
+
+#blogtable, #blogtable .school, #blogtable .principal, #blogtable .news, #blogtable .date{
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    height: 130px;
+
+
+}
+#blogtable .school{
+    width: 20%;
+    margin: 10px;
     background-image: url('../img/icon.png');
-    background-size: cover;
+    background-size: contain ;
+    background-repeat: no-repeat;
     background-position: center;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
-
-#liste1 li.school:before {
-    content: '';
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    background-image: url('../img/swing.jpg');
-    background-size: cover;
+#blogtable .principal{
+    width: 20%;
+    margin: 10px;
+    background-image: url('../img/icon.png');
+    background-size: contain ;
     background-position: center;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    background-repeat: no-repeat;
 }
 
-#liste1 .BOS {
-     padding-bottom: 35px;
+
+
+#blogtable .news {
+    padding-left: 60px;
+    width: 70%;
 }
 
+#blogtable .news h2{
+     font-size:24x;
+     font-weight: normal;
+}
+
+#blogtable .date{
+    position: relative;
+    vertical-align: top;
+    right: 20px;
+    color: grey;
+    font-style: italic;
+
+}
