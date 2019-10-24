@@ -11,7 +11,6 @@ function loadFooter() {
     ];
     var linkListMain = document.createElement('ul');
     for(const element of links.slice(0,2)){
-        console.log('going through the list');
         var linkElm =document.createElement('a');
         var listElm = document.createElement('li');
         linkElm.setAttribute('style','text-align:left;');
