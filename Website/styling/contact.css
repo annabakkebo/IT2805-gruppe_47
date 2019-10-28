@@ -1,13 +1,30 @@
+table{
+    width:100%;
+    margin-bottom: 60px;
+}
+td{
+    text-align: center;
+    width:50%;
+}
+tr{
+    border-bottom: 2px solid grey;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+}
+
 #column1{
     position:relative;
-    width:calc(50% - 50px);
+    width:calc(50% - 60px);
     margin-left:0px;
     display: inline-block;
 }
 #column2{
     vertical-align: top;
     position:relative;
-    width:calc(50% - 50px);
+    width:calc(50% - 60px);
     margin-right: 0px;
     display: inline-block;
 }
@@ -15,8 +32,8 @@
 .employeeList>li:nth-child(even):before{
     content: '';
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     background-image: url("../img/Person1.png");
     background-size: contain;
     margin-bottom: -60px;
@@ -26,8 +43,8 @@
 .employeeList>li:nth-child(odd):before{
     content: '';
     display: inline-block;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     background-image: url("../img/Person2.png");
     background-size: contain;
     margin-bottom: -60px;
@@ -37,8 +54,25 @@
 .employeeListElm{
     columns: 1;
     list-style: none;
-    margin-left: 50px;
+    margin-left: 60px;
 }
 .employeeListElm>ul>li{
     list-style: none;
+}
+
+@media only screen and (max-width: 700px) {
+    #column1{
+        display: block;
+    }
+    #column2{
+        display: block;
+    }
+}
+
+.headline{
+    text-align: center;
+}
+
+a{
+    color: dimgray;
 }

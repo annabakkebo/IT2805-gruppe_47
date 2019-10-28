@@ -40,7 +40,7 @@ function loadEmployees(employeeList=employeeList1) {
 
         var tlf = employeeList[i].tlf;
         var tlfListElm = document.createElement('li');
-        tlfListElm.innerHTML="Tlf: "+tlf;
+        tlfListElm.innerHTML="Phone: "+tlf;
         personList.appendChild(tlfListElm);
 
         employeelistElm.appendChild(personList);
