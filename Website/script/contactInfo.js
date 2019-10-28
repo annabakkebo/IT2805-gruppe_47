@@ -193,9 +193,35 @@ var Person15 = {
     },
     tlf: "81627155"
 };
+var Person16 = {
+    firstName: 'Pauline',
+    lastName: 'Johnsen',
+    category: 'external',
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    },
+    workTitle: "Teacher assistant, rented",
+    email: function () {
+        return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
+    },
+    tlf: "82716654"
+};
+var Person17 = {
+    firstName: 'Helge',
+    lastName: 'Olsen',
+    category: 'external',
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    },
+    workTitle: "Invigilator, rented",
+    email: function () {
+        return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
+    },
+    tlf: "81627155"
+};
 
 var employeeList1 = [
     Person1, Person2, Person3, Person4, Person5, Person6, Person7, Person8, Person9,
-    Person10, Person11, Person12, Person13, Person14, Person15
+    Person10, Person11, Person12, Person13, Person14, Person15, Person16, Person17
 ];
 employeeList1.sort((a,b)=>(a.lastName>b.lastName)?1:-1);
