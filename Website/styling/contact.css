@@ -52,9 +52,7 @@ img{
 }
 
 .employeeListElm{
-    columns: 1;
     list-style: none;
-    margin-left: 60px;
 }
 .employeeListElm>ul>li{
     list-style: none;
@@ -75,4 +73,22 @@ img{
 
 a{
     color: dimgray;
+}
+.search{
+    height: 30px;
+    width: 18%;
+    display: table-cell;
+    margin: 4px;
+    border-radius: 2px;
+    color: white;
+    background-color: rgb(169, 209, 142);
+    cursor: pointer;
+    font-size: 18px;
+}
+.search:hover{
+    background-color: rgba(169, 209, 142, 0.58);
+}
+.table{
+    display: table;
+    width: 100%;
 }
