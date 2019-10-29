@@ -9,7 +9,7 @@ var Person1 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91662277"
+    tlf: "612 00 002"
 };
 var Person2 = {
     firstName: "Hanne",
@@ -22,7 +22,7 @@ var Person2 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91110932"
+    tlf: "911 10 932"
 };
 var Person3 = {
     firstName: "Joy",
@@ -35,7 +35,7 @@ var Person3 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "45826144"
+    tlf: "458 26 144"
 };
 var Person4 = {
     firstName: "Martin",
@@ -48,7 +48,7 @@ var Person4 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91916377"
+    tlf: "919 16 377"
 };
 var Person5 = {
     firstName: "Eve",
@@ -61,7 +61,7 @@ var Person5 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "95824188"
+    tlf: "958 24 188"
 };
 var Person6 = {
     firstName: "Markus",
@@ -74,7 +74,7 @@ var Person6 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "93821568"
+    tlf: "938 21 568"
 };
 var Person7 = {
     firstName: "André",
@@ -87,7 +87,7 @@ var Person7 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "72916382"
+    tlf: "729 16 382"
 };
 var Person8 = {
     firstName: 'Trude',
@@ -100,7 +100,7 @@ var Person8 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91627382"
+    tlf: "916 27 382"
 };
 var Person9 = {
     firstName: 'Sigurd',
@@ -113,7 +113,7 @@ var Person9 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91627382"
+    tlf: "916 27 382"
 };
 var Person10 = {
     firstName: 'Fredrik',
@@ -126,7 +126,7 @@ var Person10 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "91110245"
+    tlf: "911 10 245"
 };
 var Person11 = {
     firstName: 'Hanne',
@@ -139,7 +139,7 @@ var Person11 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "15241099"
+    tlf: "152 41 099"
 };
 var Person12 = {
     firstName: 'Gjermund',
@@ -152,7 +152,7 @@ var Person12 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "71524311"
+    tlf: "715 24 311"
 };
 var Person13 = {
     firstName: 'Jakob',
@@ -165,7 +165,7 @@ var Person13 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "71524311"
+    tlf: "715 24 311"
 };
 var Person14 = {
     firstName: 'Gjermund',
@@ -178,7 +178,7 @@ var Person14 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "71524311"
+    tlf: "715 24 311"
 };
 var Person15 = {
     firstName: 'Finn',
@@ -191,7 +191,7 @@ var Person15 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "81627155"
+    tlf: "816 27 155"
 };
 var Person16 = {
     firstName: 'Pauline',
@@ -204,7 +204,7 @@ var Person16 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "82716654"
+    tlf: "827 16 654"
 };
 var Person17 = {
     firstName: 'Helge',
@@ -217,7 +217,7 @@ var Person17 = {
     email: function () {
         return this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@laeskuela.no"
     },
-    tlf: "81627155"
+    tlf: "816 27 155"
 };
 
 var employeeList1 = [
