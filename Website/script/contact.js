@@ -58,3 +58,13 @@ function loadEmployees(employeeList=employeeList1) {
     employeeDiv.appendChild(listOfEmployees2);
 
 }
+
+function loadSection(key,employeeList=employeeList1){
+    var new_list=[];
+    for (element of employeeList){
+        if (element['category'] == key){
+            new_list.push(element);
+        }
+    }
+    loadEmployees(new_list);
+}
