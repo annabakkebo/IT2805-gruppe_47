@@ -54,23 +54,27 @@ function loadFooter() {
 
     footer.appendChild(listAdress);
 
-    var sosialLinks = ['img/facebook.png','img/twitter.png','img/insta.png'];
-    var sosialMedia = document.createElement('ul');
-    sosialMedia.id='sosialMediaList';
+    var socialLinks = [['img/facebook.png','https://www.facebook.com'],
+        ['img/twitter.png','https://twitter.com'],['img/insta.png','https://www.instagram.com']
+    ];
+    var socialMedia = document.createElement('ul');
+    socialMedia.id='socialMediaList';
 
-    for (element of sosialLinks){
-        var fbListElm = document.createElement('li');
-        var fbLinkElm = document.createElement('a');
-        var fbImageElm = document.createElement('img');
-        fbImageElm.setAttribute('src',element);
-        fbImageElm.classList = 'sosialImg';
-        fbLinkElm.appendChild(fbImageElm);
-        fbListElm.appendChild(fbLinkElm);
-        sosialMedia.appendChild(fbListElm);
+    for (element of socialLinks){
+        var ListElm = document.createElement('li');
+        var LinkElm = document.createElement('a');
+        LinkElm.setAttribute('href',element[1]);
+        var ImageElm = document.createElement('img');
+        ImageElm.setAttribute('src',element[0]);
+        ImageElm.classList = 'socialImg';
+        ImageElm.setAttribute('alt', 'social media image');
+        LinkElm.appendChild(ImageElm);
+        ListElm.appendChild(LinkElm);
+        socialMedia.appendChild(ListElm);
     }
 
 
-    footer.appendChild(sosialMedia);
+    footer.appendChild(socialMedia);
     divfooter.appendChild(footer);
     var doc = document.getElementById('wrapper');
     doc.insertAdjacentElement("afterend", divfooter);

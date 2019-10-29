@@ -40,10 +40,11 @@ footer >ul>li>ul>li , footer >ul>li>ul{
     margin-right: auto;
 }
 
-.sosialImg{
-    width:20px;
-    height:20px;
+.socialImg{
+    width:30px;
+    height:30px;
 }
-#sosialMediaList{
+#socialMediaList{
+    margin-top: 10px;
     display: inline-block;
 }
