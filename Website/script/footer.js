@@ -54,18 +54,21 @@ function loadFooter() {
 
     footer.appendChild(listAdress);
 
-
+    var sosialLinks = ['img/facebook.png','img/twitter.png','img/insta.png'];
     var sosialMedia = document.createElement('ul');
     sosialMedia.id='sosialMediaList';
 
-    var fbListElm = document.createElement('li');
-    var fbLinkElm = document.createElement('a');
-    var fbImageElm = document.createElement('img');
-    fbImageElm.setAttribute('scr','img/facebook.png');
-    fbImageElm.classList = 'sosialImg';
-    fbLinkElm.appendChild(fbImageElm);
-    fbListElm.appendChild(fbLinkElm);
-    sosialMedia.appendChild(fbListElm);
+    for (element of sosialLinks){
+        var fbListElm = document.createElement('li');
+        var fbLinkElm = document.createElement('a');
+        var fbImageElm = document.createElement('img');
+        fbImageElm.setAttribute('src',element);
+        fbImageElm.classList = 'sosialImg';
+        fbLinkElm.appendChild(fbImageElm);
+        fbListElm.appendChild(fbLinkElm);
+        sosialMedia.appendChild(fbListElm);
+    }
+
 
     footer.appendChild(sosialMedia);
     divfooter.appendChild(footer);

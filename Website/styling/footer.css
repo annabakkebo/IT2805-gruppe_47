@@ -44,3 +44,6 @@ footer >ul>li>ul>li , footer >ul>li>ul{
     width:20px;
     height:20px;
 }
+#sosialMediaList{
+    display: inline-block;
+}
