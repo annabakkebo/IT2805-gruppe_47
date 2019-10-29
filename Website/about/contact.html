@@ -8,13 +8,48 @@
     <link rel="stylesheet" type="text/css" href="styling/styling.css">
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <link rel="stylesheet" type="text/css" href="styling/footer.css">
+    <link rel="stylesheet" type="text/css" href="styling/contact.css">
     <script src="script/navBar.js"></script>
+    <script src="script/contactInfo.js"></script>
+    <script src="script/contact.js"></script>
     <script src="script/footer.js"></script>
     <link rel="icon" href="img/icon.png">
 
 </head>
 <body>
-<div id="wrapper"></div>
+<div id="wrapper">
+    <h2 class="headline">Contact us</h2>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <img src="img/icon.png" class="contactImg"> <br>
+                <h4>Administration</h4>
+                <a href="mailto:post@laescuela.no">post@laescuela.no</a><br>
+                <a href="mailto:kontor@laescuela.no">kontor@laescuela.no</a><br>
+                612 00 001
+            </td>
+            <td>
+                <img src="img/Person1.png" class="contactImg"> <br>
+                <h3>Arne Brillestad</h3>
+                Principal<br>
+                <a href="mailto:arne.brillestad@laescuela.no">arne.brillestad@laescuela.no</a><br>
+                <a href="mailto:principal@laescuela.no">principal@laescuela.no</a> <br>
+                612 00 002
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h2 class="headline">Employees</h2>
+    <div class="table">
+        <input type="button" class="search" onclick="loadEmployees()" value="All">
+        <input type="button" class="search" onclick="loadSection('teacher')" value="Teachers">
+        <input type="button" class="search" onclick="loadSection('leadership')" value="Leadership">
+        <input type="button" class="search" onclick="loadSection('counsellor')" value="Counsellors">
+        <input type="button" class="search" onclick="loadSection('external')" value="External">
+    </div>
+</div>
+<script>loadContact()</script>
 <script>loadFooter()</script>
 </body>
 </html>
