@@ -53,9 +53,22 @@ function loadFooter() {
 
 
     footer.appendChild(listAdress);
+
+
+    var sosialMedia = document.createElement('ul');
+    sosialMedia.id='sosialMediaList';
+
+    var fbListElm = document.createElement('li');
+    var fbLinkElm = document.createElement('a');
+    var fbImageElm = document.createElement('img');
+    fbImageElm.setAttribute('scr','img/facebook.png');
+    fbImageElm.classList = 'sosialImg';
+    fbLinkElm.appendChild(fbImageElm);
+    fbListElm.appendChild(fbLinkElm);
+    sosialMedia.appendChild(fbListElm);
+
+    footer.appendChild(sosialMedia);
     divfooter.appendChild(footer);
-
-
     var doc = document.getElementById('wrapper');
     doc.insertAdjacentElement("afterend", divfooter);
 }
