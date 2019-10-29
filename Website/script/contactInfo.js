@@ -116,8 +116,8 @@ var Person9 = {
     tlf: "91627382"
 };
 var Person10 = {
-    firstName: 'Name',
-    lastName: 'Nameson',
+    firstName: 'Fredrik',
+    lastName: 'Sunde',
     category: 'counsellor',
     fullName: function () {
         return this.firstName + " " + this.lastName;
@@ -129,8 +129,8 @@ var Person10 = {
     tlf: "91110245"
 };
 var Person11 = {
-    firstName: 'Name',
-    lastName: 'Nameson',
+    firstName: 'Hanne',
+    lastName: 'Torkildsen',
     category: 'counsellor',
     fullName: function () {
         return this.firstName + " " + this.lastName;
