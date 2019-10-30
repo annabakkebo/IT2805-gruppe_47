@@ -141,11 +141,8 @@ input[type=submit] {
     background-repeat: no-repeat;
     background-position: center;
 }
-#blogtable .principal{
-    width: 20%;
-    margin: 10px;
-    background-image: url('../img/icon.png');
-    background-size: contain ;
+
+
 #blogtable .principal{
     width: 20%;
     margin: 10px;
@@ -174,4 +171,39 @@ input[type=submit] {
     color: grey;
     font-style: italic;
 
+}
+
+.blognews {
+    position: relative;
+    width: 60%;
+    margin-left: 35px;
+    margin-top: 100Px;
+}
+
+.blognews h2{
+    padding-top: 15px;
+    padding-left: 12px;
+    margin: auto;
+    font-size: 18px;
+}
+.blognews .pic img {
+    position: absolute;
+    display: block;
+    margin-left: 160px;
+    margin-top: -75px;
+    width: 25%;
+
+}
+
+.blognews .news {
+    border: 1px;
+    border-radius: 25px;
+    height: 150px;
+    background-color: rgb(169, 209, 142);
+    width: 100%;
+}
+
+.blognews p {
+    padding-left: 12px;
+    font-size: 16px;
 }
