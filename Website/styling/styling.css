@@ -146,6 +146,11 @@ input[type=submit] {
     margin: 10px;
     background-image: url('../img/icon.png');
     background-size: contain ;
+#blogtable .principal{
+    width: 20%;
+    margin: 10px;
+    background-image: url('../img/Person1.png');
+    background-size: contain ;
     background-position: center;
     background-repeat: no-repeat;
 }
