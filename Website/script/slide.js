@@ -31,7 +31,7 @@ function loadSlideshow1() {
         fadein.appendChild(image);
     }
     fadein.querySelector(':nth-child(1)').classList.remove('is-hidden');
-    slideshow.insertAdjacentElement("afterend", fadein);
+    slideshow.appendChild( fadein);
     fadein.addEventListener('transitionend',function () {
         fadein.insertBefore(fadein.querySelector(':first-child.is-hidden'),null);
     });
