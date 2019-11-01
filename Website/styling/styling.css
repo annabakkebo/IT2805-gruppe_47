@@ -223,3 +223,9 @@ input[type=submit] {
 .descEvent {
 
 }
+.dateSameMonth {
+    background-color: forestgreen;
+}
+.dateNotSameMonth {
+    background-color: lightgreen;
+}

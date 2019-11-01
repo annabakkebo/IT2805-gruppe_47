@@ -24,38 +24,6 @@ function daysInMonth(year,month){
     return new Date(year,monthIndex,0).getDate();
 }
 
-function displayCal(small=false){
-    var currDate = new Date();
-    var calElmt = document.getElementById('calElmt');
-    calElmt.setAttribute('id','calTab')
-    var mainFrame = document.createElement('table');
-    var monthRow = document.createElement('tr');
-    var monthRowCell = document.createElement('th');
-    monthRowCell.setAttribute('colspan','7');
-    var arr1 = document.createElement('button');
-    arr1.setAttribute('type','button');
-    arr1.setAttribute('name','back');
-    arr1.innerText ='<';
-    var arr2 = document.createElement('button');
-    arr2.setAttribute('type','button');
-    arr2.setAttribute('name','forward');
-    arr2.innerText ='>';
-    var textNode = document.createTextNode(monthName(currDate.getMonth(),small)+' '+currDate.getFullYear());
-    monthRowCell.appendChild(arr1);
-    monthRowCell.appendChild(textNode);
-    monthRowCell.appendChild(arr2);
-    monthRow.append(monthRowCell);
-    mainFrame.appendChild(monthRow);
-    var dayRow = document.createElement('tr');
-    for (var i=0;i < 6;i++){
-        var dayCell = document.createElement('th');
-        dayCell.innerHTML = dayName(i,small);
-        dayRow.appendChild(dayCell);
-    }
-    mainFrame.appendChild(dayRow);
-    calElmt.appendChild(mainFrame);
-}
-
 function makeDateArray(year,month){
     /*Returns the dates of the month concated with the dates of preceding and succeding month in the weeks of month
     change. I.e. in format [[date,month],...,[date,month]]*/
@@ -75,7 +43,98 @@ function makeDateArray(year,month){
     }
     return dateArray
 }
+function fillCalendarFunc (mainframe,dateArray,month,year) {
+    var i=0;
+    while (i< dateArray.length){
+        var tablerow = document.createElement("tr");
+        tablerow.setAttribute('class','dateRowsCal');
+        for (var j=0;j<7;j++){
+            /*Put in code for getting events here.*/
+            var tablecell = document.createElement("td");
+            tablecell.innerText=dateArray[i][0];
+            if (month == dateArray[i][1]){
+                tablecell.setAttribute('class','dateSameMonth');
+            } else {
+                tablecell.setAttribute('class','dateNotSameMonth');
+            }
 
+            tablerow.appendChild(tablecell);
+            i+=1;
+        }
+        mainframe.appendChild(tablerow);
+    }
+}
+function calHead(mainFrame,month,year,small){
+    var monthRow = document.createElement('tr');
+    var monthRowCell = document.createElement('th');
+    monthRowCell.setAttribute('colspan','7');
+    var arr1 = document.createElement('button');
+    arr1.setAttribute('type','button');
+    arr1.setAttribute('name','back');
+    arr1.setAttribute('onclick','changeMonth(false,'+small+')');
+    arr1.innerText ='<';
+    var arr2 = document.createElement('button');
+    arr2.setAttribute('type','button');
+    arr2.setAttribute('name','forward');
+    arr2.setAttribute('onclick','changeMonth(true,'+small+')');
+    arr2.innerText ='>';
+    var spanElmt = document.createElement('span');
+    var spanElmt2 = document.createElement('span');
+    var spanElmt3 = document.createElement('span');
+    spanElmt.setAttribute('id','monthRowCal');
+    spanElmt2.setAttribute('id','monthRowCalVal');
+    spanElmt3.setAttribute('id','monthRowCalValYear');
+    spanElmt2.style.display='none';
+    spanElmt2.innerHTML = month;
+    spanElmt3.style.display='none';
+    spanElmt3.innerHTML = year;
+    spanElmt.innerHTML = monthName(month,small)+' '+year;
+    monthRowCell.appendChild(arr1);
+    monthRowCell.appendChild(spanElmt);
+    monthRowCell.appendChild(spanElmt2);
+    monthRowCell.appendChild(spanElmt3);
+    monthRowCell.appendChild(arr2);
+    monthRow.append(monthRowCell);
+    mainFrame.appendChild(monthRow);
+}
+function displayCalLoad(small=false){
+    /*Loads in the calendar for the current month on load.*/
+    var currDate = new Date();
+    var currMonth = currDate.getMonth();
+    var currYear = currDate.getFullYear();
+    var calElmt = document.getElementById('calElmt');
+    var mainFrame = document.createElement('table');
+    calHead(mainFrame,currMonth,currYear,small);
+    var dayRow = document.createElement('tr');
+    for (var i=0;i < 7;i++){
+        var dayCell = document.createElement('th');
+        dayCell.innerHTML = dayName(i,small);
+        dayRow.appendChild(dayCell);
+    }
+    mainFrame.appendChild(dayRow);
+    calElmt.appendChild(mainFrame);
+    var dateArray = makeDateArray(currYear,currMonth);
+    fillCalendarFunc(mainFrame,dateArray,currMonth,currYear);
+}
+
+function changeMonth(add,small=false){
+    /*add gives wether we are going forward in time or backwards.*/
+    var oldMonth = Number(document.getElementById('monthRowCalVal').innerText);
+    var newMonth = add ?  (oldMonth == 11 ? 0 : oldMonth+1) : (oldMonth == 0 ? 11 : oldMonth-1);
+    console.log((document.getElementById('monthRowCalValYear')));
+    var oldYear = Number(document.getElementById('monthRowCalValYear').innerText);
+    var newYear = add ? (oldMonth == 11 ? oldYear +1 : oldYear) : (oldMonth==0 ? oldYear-1 : oldYear);
+    document.getElementById('monthRowCalVal').innerText = newMonth;
+    document.getElementById('monthRowCal').innerText = monthName(newMonth,small)+' '+newYear;
+    var calElmt = document.getElementById('calElmt');
+    var delList = document.getElementsByClassName('dateRowsCal');
+    while (delList[0]) {
+        delList[0].parentNode.removeChild(delList[0]);
+    }
+    var mainFrame = calElmt.firstChild;
+    var newDateArray = makeDateArray(newMonth,newYear);
+    fillCalendarFunc(mainFrame,newDateArray,newMonth,newYear);
+}
 
 // ListDisplay
 
