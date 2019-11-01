@@ -1,6 +1,6 @@
 var monthsNameArray = [['January','Jan.'],['February','Feb.'],['March','Mar.'],['April','Apr.'],['May','May'],
     ['June','Jun.'],['July','Jul.'],['August','Aug.'],['September','Sep.'],['October','Oct.'],['November','Nov.'],
-    ['December','Dec']];
+    ['December','Dec.']];
 var daysNameArray = [['Mon','Mo','Monday'],['Tue','Tu','Tuesday'],['Wed','We','Wednesday'],['Thu','Th','Thursday'],
     ['Fri','Fr','Friday'], ['Sat','Sa','Saturday'],['Sun','Su','Sunday']];
 function dayName(day,small){
@@ -54,9 +54,21 @@ function fillCalendarFunc (mainframe,dateArray,month,year) {
         for (var j=0;j<7;j++){
             /*Put in code for getting events here.*/
             var tablecell = document.createElement("td");
-            tablecell.innerText=dateArray[i][0];
+            var dateNode = document.createElement('span')
+            dateNode.style.position='absolute';
+            dateNode.style.zIndex='0';
+            dateNode.innerText=dateArray[i][0];
+            tablecell.appendChild(dateNode);
             if (month == dateArray[i][1]){
                 tablecell.setAttribute('class','dateSameMonth');
+                if (eventListDate.includes(dateArray[i][0])){
+                    var canvElmt = document.createElement('canvas');
+                    canvElmt.setAttribute('width','50');
+                    canvElmt.setAttribute('height','50');
+                    canvElmt.setAttribute('class','calCircl');
+                    /*Add a onclick function*/
+                    tablecell.appendChild(canvElmt);
+                }
             } else {
                 tablecell.setAttribute('class','dateNotSameMonth');
             }
@@ -96,7 +108,7 @@ function calHead(mainFrame,month,year,small){
     spanElmt2.innerHTML = month;
     spanElmt3.style.display='none';
     spanElmt3.innerHTML = year;
-    spanElmt.innerHTML = monthName(month,small)+'<br\ > '+year;
+    spanElmt.innerHTML = monthName(month,small)+'<br\> '+year;
     monthRowCell2.appendChild(arr1);
     monthRowCell.appendChild(spanElmt);
     monthRowCell.appendChild(spanElmt2);
@@ -133,10 +145,13 @@ function changeMonth(add,small=false){
     /*add gives wether we are going forward in time or backwards.*/
     var oldMonth = Number(document.getElementById('monthRowCalVal').innerText);
     var newMonth = add ?  (oldMonth == 11 ? 0 : oldMonth+1) : (oldMonth == 0 ? 11 : oldMonth-1);
+    console.log(newMonth);
     var oldYear = Number(document.getElementById('monthRowCalValYear').innerText);
     var newYear = add ? (oldMonth == 11 ? oldYear +1 : oldYear) : (oldMonth==0 ? oldYear-1 : oldYear);
+    console.log(newYear);
+    document.getElementById('monthRowCalValYear').innerText = newYear;
     document.getElementById('monthRowCalVal').innerText = newMonth;
-    document.getElementById('monthRowCal').innerText = monthName(newMonth,small)+' '+newYear;
+    document.getElementById('monthRowCal').innerHTML = monthName(newMonth,small)+'<br\>'+newYear;
     var calElmt = document.getElementById('calElmt');
     var delList = document.getElementsByClassName('dateRowsCal');
     while (delList[0]) {
@@ -168,9 +183,9 @@ function circleDrawing () {
     for (var i=0;i<c.length;i++) {
         var ctx = c[i].getContext("2d");
         ctx.beginPath();
-        ctx.arc(250, 250, 200, 0, 2 * Math.PI);
+        ctx.arc(25, 25, 20, 0, 2 * Math.PI);
         ctx.strokeStyle = 'red';
-        ctx.lineWidth = 25;
+        ctx.lineWidth = 4;
         ctx.stroke();
     }
 }
@@ -186,14 +201,29 @@ function eventLoad(year, month){
         var protoD = protoEvent[0].innerText.split('.');
         var dm = Number(protoD[1])-1;
         var dy = Number(protoD[2]);
+        var dd = Number(protoD[0]);
         if (dm==month && dy==year) {
-            var d = new Date(dy,dm,Number(protoD[0]));
+            var d = new Date(dy,dm,dd);
             var title = protoEvent[1].innerText;
             var description = protoEvent[2].innerText;
             eventList.push([d,title,description]);
-            eventListDate.push(d);
+            eventListDate.push(dd);
         }
 
     }
     return [eventList,eventListDate]
 }
+
+// When click on circles
+
+function loadOverlay(eventList,day,month,year){
+    var backOverlay = document.createElement('div');
+    backoverlay.setAttribute('id','black');
+    backOverlay.setAttribute('style','width:100%;' +
+        'height100%;'+'position:fixed;background-color:rgba(0,0,0,0.5)');
+    var bodyTag = document.getElementsByTagName('body')[0];
+
+}
+
+// Load into another page
+

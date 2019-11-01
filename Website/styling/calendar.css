@@ -31,30 +31,43 @@
     border-radius: 10px;
 }
 #calElmt table td {
-    text-align: left;
-    vertical-align: top;
     position: relative;
     border-radius: 2px;
+    text-align: left;
+    vertical-align: top;
 }
-table#smalltrue th,td {
-    width:10px;
-}
+
 table#smallfalse{
     width:400px;
 }
-#smallfalse th,td {
+#smallfalse th, #smallfalse td {
     width: 50px;
     height:50px;
 }
-#smallfalse canvas {
+#smalltrue th, #smalltrue td {
+    width: 30px;
+    height:30px;
+    font-size: small;
+}
+#smalltrue td span {
+    width:100%;
+    top:9px;
+    left:0;
+    vertical-align: middle;
+    text-align: center;
+}
+#smallfalse .calCircl {
     width:50px;
     height:50px;
 }
-#smalltrue canvas {
-    width:10px;
-    height: 10px;
+#smalltrue .calCircl {
+    width:30px;
+    height: 30px;
 }
-#calElmt canvas {
+.calCircl {
     position: absolute;
+    bottom:0;
+    right:0;
     z-index: 1;
+    opacity: 0.7;
 }
