@@ -21,3 +21,34 @@
 .dateNotSameMonth {
     background-color: lightgreen;
 }
+#calElmt table {
+    background-color: rgb(169,209,142);
+    text-align: center;
+}
+#calElmt table td {
+    text-align: left;
+    vertical-align: top;
+    position: relative;
+}
+table#smalltrue th,td {
+    width:10px;
+}
+table#smallfalse{
+    width:400px;
+}
+#smallfalse th,td {
+    width: 50px;
+    height:50px;
+}
+#smallfalse canvas {
+    width:50px;
+    height:50px;
+}
+#smalltrue canvas {
+    width:10px;
+    height: 10px;
+}
+#calElmt canvas {
+    position: absolute;
+    z-index: 1;
+}

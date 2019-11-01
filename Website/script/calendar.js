@@ -1,8 +1,8 @@
 var monthsNameArray = [['January','Jan.'],['February','Feb.'],['March','Mar.'],['April','Apr.'],['May','May'],
     ['June','Jun.'],['July','Jul.'],['August','Aug.'],['September','Sep.'],['October','Oct.'],['November','Nov.'],
     ['December','Dec']];
-var daysNameArray = [['Monday','Mon.'],['Tuesday','Tu.'],['Wednesday','Wed.'],['Thursday','Th.'],['Friday','Fri.'],
-    ['Saturday','Sat.'],['Sunday','Sun.']];
+var daysNameArray = [['Mon','Mo','Monday'],['Tue','Tu','Tuesday'],['Wed','We','Wednesday'],['Thu','Th','Thursday'],
+    ['Fri','Fr','Friday'], ['Sat','Sa','Saturday'],['Sun','Su','Sunday']];
 function dayName(day,small){
     if (small){
         return daysNameArray[day][1]
@@ -45,6 +45,9 @@ function makeDateArray(year,month){
 }
 function fillCalendarFunc (mainframe,dateArray,month,year) {
     var i=0;
+    var mainEventList = eventLoad(year,month);
+    var eventList = mainEventList[0];
+    var eventListDate = mainEventList[1];
     while (i< dateArray.length){
         var tablerow = document.createElement("tr");
         tablerow.setAttribute('class','dateRowsCal');
@@ -67,7 +70,11 @@ function fillCalendarFunc (mainframe,dateArray,month,year) {
 function calHead(mainFrame,month,year,small){
     var monthRow = document.createElement('tr');
     var monthRowCell = document.createElement('th');
-    monthRowCell.setAttribute('colspan','7');
+    var monthRowCell2 = document.createElement('th');
+    var monthRowCell3 = document.createElement('th');
+    monthRowCell.setAttribute('colspan','3');
+    monthRowCell2.setAttribute('colspan','2');
+    monthRowCell3.setAttribute('colspan','2');
     var arr1 = document.createElement('button');
     arr1.setAttribute('type','button');
     arr1.setAttribute('name','back');
@@ -88,13 +95,15 @@ function calHead(mainFrame,month,year,small){
     spanElmt2.innerHTML = month;
     spanElmt3.style.display='none';
     spanElmt3.innerHTML = year;
-    spanElmt.innerHTML = monthName(month,small)+' '+year;
-    monthRowCell.appendChild(arr1);
+    spanElmt.innerHTML = monthName(month,small)+'<br\ > '+year;
+    monthRowCell2.appendChild(arr1);
     monthRowCell.appendChild(spanElmt);
     monthRowCell.appendChild(spanElmt2);
     monthRowCell.appendChild(spanElmt3);
-    monthRowCell.appendChild(arr2);
+    monthRowCell3.appendChild(arr2);
+    monthRow.append(monthRowCell2);
     monthRow.append(monthRowCell);
+    monthRow.append(monthRowCell3);
     mainFrame.appendChild(monthRow);
 }
 function displayCalLoad(small=false){
@@ -104,6 +113,7 @@ function displayCalLoad(small=false){
     var currYear = currDate.getFullYear();
     var calElmt = document.getElementById('calElmt');
     var mainFrame = document.createElement('table');
+    mainFrame.setAttribute('id','small'+small)
     calHead(mainFrame,currMonth,currYear,small);
     var dayRow = document.createElement('tr');
     for (var i=0;i < 7;i++){
@@ -115,13 +125,13 @@ function displayCalLoad(small=false){
     calElmt.appendChild(mainFrame);
     var dateArray = makeDateArray(currYear,currMonth);
     fillCalendarFunc(mainFrame,dateArray,currMonth,currYear);
+    circleDrawing();
 }
 
 function changeMonth(add,small=false){
     /*add gives wether we are going forward in time or backwards.*/
     var oldMonth = Number(document.getElementById('monthRowCalVal').innerText);
     var newMonth = add ?  (oldMonth == 11 ? 0 : oldMonth+1) : (oldMonth == 0 ? 11 : oldMonth-1);
-    console.log((document.getElementById('monthRowCalValYear')));
     var oldYear = Number(document.getElementById('monthRowCalValYear').innerText);
     var newYear = add ? (oldMonth == 11 ? oldYear +1 : oldYear) : (oldMonth==0 ? oldYear-1 : oldYear);
     document.getElementById('monthRowCalVal').innerText = newMonth;
@@ -133,8 +143,8 @@ function changeMonth(add,small=false){
     }
     var mainFrame = calElmt.firstChild;
     var newDateArray = makeDateArray(newYear,newMonth,);
-    console.log(newDateArray);
     fillCalendarFunc(mainFrame,newDateArray,newMonth,newYear);
+    circleDrawing();
 }
 
 // ListDisplay
@@ -148,4 +158,41 @@ function toggleEvDisp(elmt){
     else {
         a.style.display='none'
     }
+}
+
+// Make circles
+
+function circleDrawing () {
+    var c = document.getElementsByClassName('calCircl');
+    for (var i=0;i<c.length;i++) {
+        var ctx = c[i].getContext("2d");
+        ctx.beginPath();
+        ctx.arc(250, 250, 200, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 25;
+        ctx.stroke();
+    }
+}
+
+// Find events
+
+function eventLoad(year, month){
+    var protoEventList = document.querySelectorAll('div#eventWrapper > div.event');
+    var eventList = [];
+    var eventListDate =[]
+    for (var i=0;i<protoEventList.length;i++){
+        var protoEvent = protoEventList[i].children;
+        var protoD = protoEvent[0].innerText.split('.');
+        var dm = Number(protoD[1])-1;
+        var dy = Number(protoD[2]);
+        if (dm==month && dy==year) {
+            var d = new Date(dy,dm,Number(protoD[0]));
+            var title = protoEvent[1].innerText;
+            var description = protoEvent[2].innerText;
+            eventList.push([d,title,description]);
+            eventListDate.push(d);
+        }
+
+    }
+    return [eventList,eventListDate]
 }
