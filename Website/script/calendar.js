@@ -67,6 +67,7 @@ function fillCalendarFunc (mainframe,dateArray,month,year) {
         mainframe.appendChild(tablerow);
     }
 }
+
 function calHead(mainFrame,month,year,small){
     var monthRow = document.createElement('tr');
     var monthRowCell = document.createElement('th');
