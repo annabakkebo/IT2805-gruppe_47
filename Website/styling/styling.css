@@ -3,7 +3,6 @@ html, body {
     padding: 0;
     height: 100%;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -139,7 +138,7 @@ input[type=submit] {
     background-image: url('../img/icon.png');
     background-size: contain ;
     background-repeat: no-repeat;
-    background-position: center;
+
 }
 
 
@@ -206,4 +205,21 @@ input[type=submit] {
 .blognews p {
     padding-left: 12px;
     font-size: 16px;
+}
+/*Css for calendar*/
+#eventWrapper {
+    display:block;
+}
+.dateEvent {
+    display: inline-block;
+}
+.titleEvent {
+    display: inline-block;
+    cursor:pointer;
+}
+.event {
+    border-bottom: 1px solid gray;
+}
+.descEvent {
+
 }
