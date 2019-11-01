@@ -206,26 +206,3 @@ input[type=submit] {
     padding-left: 12px;
     font-size: 16px;
 }
-/*Css for calendar*/
-#eventWrapper {
-    display:block;
-}
-.dateEvent {
-    display: inline-block;
-}
-.titleEvent {
-    display: inline-block;
-    cursor:pointer;
-}
-.event {
-    border-bottom: 1px solid gray;
-}
-.descEvent {
-
-}
-.dateSameMonth {
-    background-color: forestgreen;
-}
-.dateNotSameMonth {
-    background-color: lightgreen;
-}

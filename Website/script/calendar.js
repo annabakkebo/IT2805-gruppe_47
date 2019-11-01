@@ -132,7 +132,8 @@ function changeMonth(add,small=false){
         delList[0].parentNode.removeChild(delList[0]);
     }
     var mainFrame = calElmt.firstChild;
-    var newDateArray = makeDateArray(newMonth,newYear);
+    var newDateArray = makeDateArray(newYear,newMonth,);
+    console.log(newDateArray);
     fillCalendarFunc(mainFrame,newDateArray,newMonth,newYear);
 }
 
