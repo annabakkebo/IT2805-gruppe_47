@@ -176,7 +176,7 @@ function toggleEvDisp(elmt){
     }
 }
 
-// Make circles
+// Drawing
 
 function circleDrawing () {
     var c = document.getElementsByClassName('calCircl');
@@ -188,6 +188,63 @@ function circleDrawing () {
         ctx.lineWidth = 4;
         ctx.stroke();
     }
+}
+
+function calSymbFunc() {
+    var c = document.getElementById('calSymb');
+    var ctx = c.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(20,10);
+    ctx.lineTo(80,10);
+    ctx.quadraticCurveTo(90,10,90,20);
+    ctx.lineTo(90,30);
+    ctx.lineTo(10,30);
+    ctx.lineTo(10,20);
+    ctx.quadraticCurveTo(10,10,20,10);
+    ctx.closePath();
+    ctx.fillstyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle='black';
+    ctx.lineWidth=3;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(10,25);
+    ctx.lineTo(10,80);
+    ctx.quadraticCurveTo(10,90,20,90);
+    ctx.lineTo(80,90);
+    ctx.quadraticCurveTo(90,90,90,80);
+    ctx.lineTo(90,25);
+    ctx.strokeStyle='black';
+    ctx.lineWidth=3;
+    ctx.stroke();
+    for (var i=40;i<80;i+=15){
+        for (var j=15;j<80;j+=15){
+            ctx.beginPath()
+            ctx.rect(j,i,10,10);
+            ctx.stroke();
+            ctx.fill();
+        }
+    }
+}
+
+function listSymbFunc() {
+    var c = document.getElementById('listSymb');
+    var ctx = c.getContext('2d');
+    ctx.beginPath();
+    for (var i=25;i<100;i+=25){
+        ctx.moveTo(20,i);
+        ctx.arc(20, i, 10, 0, 2 * Math.PI);
+    }
+    ctx.fill();
+    ctx.beginPath()
+    for (var j=25;j<100;j+=25){
+        ctx.moveTo(40,j);
+        ctx.lineTo(85,j);
+    }
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 15;
+    ctx.stroke();
 }
 
 // Find events

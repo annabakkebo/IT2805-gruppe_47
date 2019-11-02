@@ -18,8 +18,17 @@
 </head>
 <body>
 <div id="wrapper">
+    <div id="symbMenu">
+        <h2>Calendar</h2>
+        <canvas width="100" height="100" id="calSymb"></canvas>
+        <canvas width="100" height="100" id="listSymb"></canvas>
+        <script>
+            calSymbFunc();
+            listSymbFunc();
+        </script>
+    </div>
     <div id="calElmt"></div>
-    <script> displayCalLoad(true)</script>
+    <script> displayCalLoad(false)</script>
 <div id="eventWrapper" style="display: none;">
     <div class="event">
         <div class="dateEvent">
@@ -73,6 +82,8 @@
     </div>
 </div>
 </div>
+
+
 <script>loadFooter()</script>
 </body>
 </html>
