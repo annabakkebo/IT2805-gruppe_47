@@ -3,12 +3,13 @@
 <head>
     <link rel="stylesheet" type="text/css" href="../styling/styling.css">
     <!--Following base tag makes sure that all relative links will be relative to the main page-->
-    <base href="https://folk.ntnu.no/endresr/laescuela/Website/index.html">
+    <base href="http://localhost:63342/IT2805-gruppe_47/Website/index.html">
     <meta charset="UTF-8">
     <title>Calendar</title>
     <link rel="stylesheet" type="text/css" href="styling/styling.css">
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <link rel="stylesheet" type="text/css" href="styling/footer.css">
+    <link rel="stylesheet" type="text/css" href="styling/calendar.css">
     <script src="script/navBar.js"></script>
     <script src="script/footer.js"></script>
     <script src="script/calendar.js"></script>
@@ -18,50 +19,56 @@
 <body>
 <div id="wrapper">
     <div id="calElmt"></div>
-    <script> displayCal(false)</script>
-<div id="eventWrapper">
-    <div class="event" id="d011119">
+    <script> displayCalLoad(true)</script>
+<div id="eventWrapper" style="display: none;">
+    <div class="event">
         <div class="dateEvent">
             31.10.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
             Halloween
         </div>
-        <div class="descEvent" style="display: none;">
-            In the occasion of Halloween, the school invites children and parents to a cozy celebration in the school cafeteria.
+        <div class="descEvent" style="display: none;">In the occasion of Halloween, the school invites children and parents to a cozy celebration in the school cafeteria.
         </div>
     </div>
-    <div class="event" id="d011119">
+    <div class="event">
         <div class="dateEvent">
             14.12.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
             Christmas concert
         </div>
-        <div class="descEvent" style="display: none;">
-            The school invites all interested to come and experience the lovely songs and stories we have prepared!
+        <div class="descEvent" style="display: none;">The school invites all interested to come and experience the lovely songs and stories we have prepared!
         </div>
     </div>
-    <div class="event" id="d011119">
+    <div class="event">
         <div class="dateEvent">
             20.12.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
             Christmas holiday.
         </div>
-        <div class="descEvent" style="display: none;">
-            Have a nice christmas holiday!
+        <div class="descEvent" style="display: none;">Have a nice christmas holiday!
         </div>
     </div>
-    <div class="event" id="d011119">
+    <div class="event">
+        <div class="dateEvent">
+            20.12.2019
+        </div>
+        <div class="titleEvent" onclick="toggleEvDisp(this)">
+            Christmas holiday.
+        </div>
+        <div class="descEvent" style="display: none;">Have a nice christmas holiday!
+        </div>
+    </div>
+    <div class="event">
         <div class="dateEvent">
             06.01.2020
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
             Welcome back!
         </div>
-        <div class="descEvent" style="display: none;">
-            We welcome all back after the holidays. The new semester will start in the gym at 10:00.
+        <div class="descEvent" style="display: none;">We welcome all back after the holidays. The new semester will start in the gym at 10:00.
         </div>
     </div>
 </div>
