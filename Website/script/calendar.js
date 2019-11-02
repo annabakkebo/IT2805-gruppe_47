@@ -46,7 +46,6 @@ function makeDateArray(year,month){
 function fillCalendarFunc (mainframe,dateArray,month,year) {
     var i=0;
     var mainEventList = eventLoad(year,month);
-    var eventList = mainEventList[0];
     var eventListDate = mainEventList[1];
     while (i< dateArray.length){
         var tablerow = document.createElement("tr");
@@ -66,6 +65,9 @@ function fillCalendarFunc (mainframe,dateArray,month,year) {
                     canvElmt.setAttribute('width','50');
                     canvElmt.setAttribute('height','50');
                     canvElmt.setAttribute('class','calCircl');
+                    canvElmt.setAttribute('onclick',
+                        'loadOverlay('+dateArray[i][0]+','+
+                        month+','+year+')')
                     /*Add a onclick function*/
                     tablecell.appendChild(canvElmt);
                 }
@@ -145,10 +147,8 @@ function changeMonth(add,small=false){
     /*add gives wether we are going forward in time or backwards.*/
     var oldMonth = Number(document.getElementById('monthRowCalVal').innerText);
     var newMonth = add ?  (oldMonth == 11 ? 0 : oldMonth+1) : (oldMonth == 0 ? 11 : oldMonth-1);
-    console.log(newMonth);
     var oldYear = Number(document.getElementById('monthRowCalValYear').innerText);
     var newYear = add ? (oldMonth == 11 ? oldYear +1 : oldYear) : (oldMonth==0 ? oldYear-1 : oldYear);
-    console.log(newYear);
     document.getElementById('monthRowCalValYear').innerText = newYear;
     document.getElementById('monthRowCalVal').innerText = newMonth;
     document.getElementById('monthRowCal').innerHTML = monthName(newMonth,small)+'<br\>'+newYear;
@@ -216,13 +216,62 @@ function eventLoad(year, month){
 
 // When click on circles
 
-function loadOverlay(eventList,day,month,year){
+function loadOverlay(day,month,year){
     var backOverlay = document.createElement('div');
-    backoverlay.setAttribute('id','black');
+    backOverlay.setAttribute('id','blackOverlay');
     backOverlay.setAttribute('style','width:100%;' +
-        'height100%;'+'position:fixed;background-color:rgba(0,0,0,0.5)');
+        'height:100%;position:fixed;background-color:rgba(0,0,0,0.5);'+
+        'z-index:2;top:0;left:0;');
+    backOverlay.setAttribute('onclick','removeOverlay1()');
+    var eventInfo = document.createElement('div');
+    eventInfo.setAttribute('id','overlayEventInfo');
+    var closeButt = document.createElement('div');
+    closeButt.setAttribute('class','closeButton');
+    closeButt.setAttribute('onclick','removeOverlay2(event)');
+    eventInfo.appendChild(closeButt);
+    var mainEventList = eventLoad(year,month);
+    var eventDateList= mainEventList[1];
+    var i=0;
+    while (i<eventDateList.length){
+        var j = eventDateList.indexOf(day,i);
+        if ( (j==-1)){
+            break;
+        } else {
+            var dateDiv = document.createElement('div');
+            dateDiv.setAttribute('class','evInfDa');
+            var titleDiv = document.createElement('div');
+            titleDiv.setAttribute('class','evInfTit');
+            var infDiv = document.createElement('div');
+            infDiv.setAttribute('class','evInfInf');
+            dateDiv.innerText = day +'.'+month+'.'+year;
+            titleDiv.innerText = mainEventList[0][j][1];
+            infDiv.innerText = mainEventList[0][j][2];
+            var eventInfoWrapper = document.createElement('div');
+            eventInfoWrapper.appendChild(dateDiv);
+            eventInfoWrapper.appendChild(titleDiv);
+            eventInfoWrapper.appendChild(infDiv);
+            eventInfo.appendChild(eventInfoWrapper);
+            i=j+1;
+        }
+    }
+    backOverlay.appendChild(eventInfo);
     var bodyTag = document.getElementsByTagName('body')[0];
+    bodyTag.insertBefore(backOverlay,bodyTag.childNodes[0]);
 
+}
+
+function removeOverlay1(){
+    var alfa = document.getElementById('blackOverlay');
+    var parElmAlfa=alfa.parentElement;
+    parElmAlfa.removeChild(alfa);
+}
+
+function removeOverlay2(e){
+    console.log('halla')
+    e.stopPropagation();
+    var alfa = document.getElementById('blackOverlay');
+    var parElmAlfa=alfa.parentElement;
+    parElmAlfa.removeChild(alfa);
 }
 
 // Load into another page
