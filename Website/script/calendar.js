@@ -235,8 +235,8 @@ function calSymbFunc() {
     ctx.strokeStyle='black';
     ctx.lineWidth=3;
     ctx.stroke();
-    for (var i=40;i<80;i+=15){
-        for (var j=15;j<80;j+=15){
+    for (var i=38;i<80;i+=18){
+        for (var j=18;j<80;j+=18){
             ctx.beginPath()
             ctx.rect(j,i,10,10);
             ctx.stroke();
