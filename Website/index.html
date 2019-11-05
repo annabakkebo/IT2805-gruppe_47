@@ -6,10 +6,12 @@
     <link rel="stylesheet" type="text/css" href="styling/styling.css">
     <link rel="stylesheet" type="text/css" href="styling/navbar.css">
     <link rel="stylesheet" type="text/css" href="styling/footer.css">
+    <link rel="stylesheet" type="text/css" href="styling/calendar.css">
     <script src="script/navBar.js"></script>
     <script src="script/slide.js"></script>
     <script src="script/footer.js"></script>
     <script src="script/infoGet.js"></script>
+    <script src="script/calendar.js"></script>
     <link rel="icon" href="img/icon.png">
 
     <meta charset="UTF-8">
@@ -30,7 +32,60 @@
             <script> loadSlideshow()</script>-->
             <script> loadSlideshow1()</script>
         </div>
-
+        <div id="calElmt"></div>
+        <script> displayCalLoad(true)</script>
+        <div id="eventWrapper" style="display: none;">
+            <div class="event">
+                <div class="dateEvent">
+                    31.10.2019
+                </div>
+                <div class="titleEvent" onclick="toggleEvDisp(this)">
+                    Halloween
+                </div>
+                <div class="descEvent" style="display: none;">In the occasion of Halloween, the school invites children and parents to a cozy celebration in the school cafeteria.
+                </div>
+            </div>
+            <div class="event">
+                <div class="dateEvent">
+                    14.12.2019
+                </div>
+                <div class="titleEvent" onclick="toggleEvDisp(this)">
+                    Christmas concert
+                </div>
+                <div class="descEvent" style="display: none;">The school invites all interested to come and experience the lovely songs and stories we have prepared!
+                </div>
+            </div>
+            <div class="event">
+                <div class="dateEvent">
+                    20.12.2019
+                </div>
+                <div class="titleEvent" onclick="toggleEvDisp(this)">
+                    Christmas holiday.
+                </div>
+                <div class="descEvent" style="display: none;">Have a nice christmas holiday!
+                </div>
+            </div>
+            <div class="event">
+                <div class="dateEvent">
+                    20.12.2019
+                </div>
+                <div class="titleEvent" onclick="toggleEvDisp(this)">
+                    Christmas holiday.
+                </div>
+                <div class="descEvent" style="display: none;">Have a nice christmas holiday!
+                </div>
+            </div>
+            <div class="event">
+                <div class="dateEvent">
+                    06.01.2020
+                </div>
+                <div class="titleEvent" onclick="toggleEvDisp(this)">
+                    Welcome back!
+                </div>
+                <div class="descEvent" style="display: none;">We welcome all back after the holidays. The new semester will start in the gym at 10:00.
+                </div>
+            </div>
+        </div>
         <div class="blognews">
             <div class="pic">
                 <img src="img/p2.png">
