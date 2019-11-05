@@ -18,15 +18,24 @@
 </head>
 <body>
 <div id="wrapper">
+    <div id="symbMenu">
+        <h2>Calendar</h2>
+        <canvas width="100" height="100" id="calSymb" onclick="toggleListCalDisp(true)"></canvas>
+        <canvas width="100" height="100" id="listSymb" onclick="toggleListCalDisp(false)"></canvas>
+        <script>
+            calSymbFunc();
+            listSymbFunc();
+        </script>
+    </div>
     <div id="calElmt"></div>
-    <script> displayCalLoad(true)</script>
+    <script> displayCalLoad(false)</script>
 <div id="eventWrapper" style="display: none;">
     <div class="event">
         <div class="dateEvent">
             31.10.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
-            Halloween
+            <h3>Halloween</h3>
         </div>
         <div class="descEvent" style="display: none;">In the occasion of Halloween, the school invites children and parents to a cozy celebration in the school cafeteria.
         </div>
@@ -36,7 +45,7 @@
             14.12.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
-            Christmas concert
+            <h3>Christmas concert</h3>
         </div>
         <div class="descEvent" style="display: none;">The school invites all interested to come and experience the lovely songs and stories we have prepared!
         </div>
@@ -46,7 +55,7 @@
             20.12.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
-            Christmas holiday.
+            <h3>Christmas holiday.</h3>
         </div>
         <div class="descEvent" style="display: none;">Have a nice christmas holiday!
         </div>
@@ -56,7 +65,7 @@
             20.12.2019
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
-            Christmas holiday.
+            <h3>Christmas holiday.</h3>
         </div>
         <div class="descEvent" style="display: none;">Have a nice christmas holiday!
         </div>
@@ -66,13 +75,25 @@
             06.01.2020
         </div>
         <div class="titleEvent" onclick="toggleEvDisp(this)">
-            Welcome back!
+           <h3> Welcome back!</h3>
         </div>
         <div class="descEvent" style="display: none;">We welcome all back after the holidays. The new semester will start in the gym at 10:00.
         </div>
     </div>
+    <div class="event">
+        <div class="dateEvent">
+            17.05.2020
+        </div>
+        <div class="titleEvent" onclick="toggleEvDisp(this)">
+           <h3> Happy costitution day!</h3>
+        </div>
+        <div class="descEvent" style="display: none;">The school will be joining the local children's parades. Please meet in front of the main building at 09:00.
+        </div>
+    </div>
 </div>
 </div>
+
+
 <script>loadFooter()</script>
 </body>
 </html>

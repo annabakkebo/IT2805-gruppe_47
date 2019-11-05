@@ -176,7 +176,25 @@ function toggleEvDisp(elmt){
     }
 }
 
-// Make circles
+function toggleListCalDisp(cal=true){
+    var b = document.getElementById('eventWrapper');
+    var a = document.getElementById('calElmt');
+    var c = document.getElementById('calSymb');
+    var d = document.getElementById('listSymb');
+    if (cal){
+        a.style.display='block';
+        b.style.display='none';
+        c.style.backgroundColor='rgb(169,209,142)';
+        d.style.backgroundColor='rgb(200,200,200)';
+    } else {
+        b.style.display='block';
+        a.style.display='none';
+        d.style.backgroundColor='rgb(169,209,142)';
+        c.style.backgroundColor='rgb(200,200,200)';
+    }
+}
+
+// Drawing
 
 function circleDrawing () {
     var c = document.getElementsByClassName('calCircl');
@@ -188,6 +206,63 @@ function circleDrawing () {
         ctx.lineWidth = 4;
         ctx.stroke();
     }
+}
+
+function calSymbFunc() {
+    var c = document.getElementById('calSymb');
+    var ctx = c.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(20,10);
+    ctx.lineTo(80,10);
+    ctx.quadraticCurveTo(90,10,90,20);
+    ctx.lineTo(90,30);
+    ctx.lineTo(10,30);
+    ctx.lineTo(10,20);
+    ctx.quadraticCurveTo(10,10,20,10);
+    ctx.closePath();
+    ctx.fillstyle = 'black';
+    ctx.fill();
+    ctx.strokeStyle='black';
+    ctx.lineWidth=3;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(10,25);
+    ctx.lineTo(10,80);
+    ctx.quadraticCurveTo(10,90,20,90);
+    ctx.lineTo(80,90);
+    ctx.quadraticCurveTo(90,90,90,80);
+    ctx.lineTo(90,25);
+    ctx.strokeStyle='black';
+    ctx.lineWidth=3;
+    ctx.stroke();
+    for (var i=40;i<80;i+=15){
+        for (var j=15;j<80;j+=15){
+            ctx.beginPath()
+            ctx.rect(j,i,10,10);
+            ctx.stroke();
+            ctx.fill();
+        }
+    }
+}
+
+function listSymbFunc() {
+    var c = document.getElementById('listSymb');
+    var ctx = c.getContext('2d');
+    ctx.beginPath();
+    for (var i=25;i<100;i+=25){
+        ctx.moveTo(20,i);
+        ctx.arc(20, i, 10, 0, 2 * Math.PI);
+    }
+    ctx.fill();
+    ctx.beginPath()
+    for (var j=25;j<100;j+=25){
+        ctx.moveTo(40,j);
+        ctx.lineTo(85,j);
+    }
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 15;
+    ctx.stroke();
 }
 
 // Find events
@@ -204,8 +279,8 @@ function eventLoad(year, month){
         var dd = Number(protoD[0]);
         if (dm==month && dy==year) {
             var d = new Date(dy,dm,dd);
-            var title = protoEvent[1].innerText;
-            var description = protoEvent[2].innerText;
+            var title = protoEvent[1].innerHTML;
+            var description = protoEvent[2].innerHTML;
             eventList.push([d,title,description]);
             eventListDate.push(dd);
         }
@@ -225,10 +300,15 @@ function loadOverlay(day,month,year){
     backOverlay.setAttribute('onclick','removeOverlay1()');
     var eventInfo = document.createElement('div');
     eventInfo.setAttribute('id','overlayEventInfo');
+    eventInfo.setAttribute('onclick','dontRemoveOverlay(event)')
     var closeButt = document.createElement('div');
     closeButt.setAttribute('class','closeButton');
     closeButt.setAttribute('onclick','removeOverlay2(event)');
     eventInfo.appendChild(closeButt);
+    var dateDiv = document.createElement('div');
+    dateDiv.setAttribute('class','evInfDa');
+    dateDiv.innerText = day +'.'+month+'.'+year;
+    eventInfo.appendChild(dateDiv);
     var mainEventList = eventLoad(year,month);
     var eventDateList= mainEventList[1];
     var i=0;
@@ -237,17 +317,13 @@ function loadOverlay(day,month,year){
         if ( (j==-1)){
             break;
         } else {
-            var dateDiv = document.createElement('div');
-            dateDiv.setAttribute('class','evInfDa');
             var titleDiv = document.createElement('div');
             titleDiv.setAttribute('class','evInfTit');
             var infDiv = document.createElement('div');
             infDiv.setAttribute('class','evInfInf');
-            dateDiv.innerText = day +'.'+month+'.'+year;
-            titleDiv.innerText = mainEventList[0][j][1];
-            infDiv.innerText = mainEventList[0][j][2];
+            titleDiv.innerHTML = mainEventList[0][j][1];
+            infDiv.innerHTML = mainEventList[0][j][2];
             var eventInfoWrapper = document.createElement('div');
-            eventInfoWrapper.appendChild(dateDiv);
             eventInfoWrapper.appendChild(titleDiv);
             eventInfoWrapper.appendChild(infDiv);
             eventInfo.appendChild(eventInfoWrapper);
@@ -259,7 +335,11 @@ function loadOverlay(day,month,year){
     bodyTag.insertBefore(backOverlay,bodyTag.childNodes[0]);
 
 }
-
+/*The three following functions remedy the fact that an onclick-event propagates through children
+ elements and to parents*/
+function dontRemoveOverlay(e){
+    e.stopPropagation();
+}
 function removeOverlay1(){
     var alfa = document.getElementById('blackOverlay');
     var parElmAlfa=alfa.parentElement;
@@ -267,7 +347,6 @@ function removeOverlay1(){
 }
 
 function removeOverlay2(e){
-    console.log('halla')
     e.stopPropagation();
     var alfa = document.getElementById('blackOverlay');
     var parElmAlfa=alfa.parentElement;
