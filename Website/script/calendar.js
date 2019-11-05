@@ -176,6 +176,24 @@ function toggleEvDisp(elmt){
     }
 }
 
+function toggleListCalDisp(cal=true){
+    var b = document.getElementById('eventWrapper');
+    var a = document.getElementById('calElmt');
+    var c = document.getElementById('calSymb');
+    var d = document.getElementById('listSymb');
+    if (cal){
+        a.style.display='block';
+        b.style.display='none';
+        c.style.backgroundColor='rgb(169,209,142)';
+        d.style.backgroundColor='rgb(200,200,200)';
+    } else {
+        b.style.display='block';
+        a.style.display='none';
+        d.style.backgroundColor='rgb(169,209,142)';
+        c.style.backgroundColor='rgb(200,200,200)';
+    }
+}
+
 // Drawing
 
 function circleDrawing () {
@@ -261,8 +279,8 @@ function eventLoad(year, month){
         var dd = Number(protoD[0]);
         if (dm==month && dy==year) {
             var d = new Date(dy,dm,dd);
-            var title = protoEvent[1].innerText;
-            var description = protoEvent[2].innerText;
+            var title = protoEvent[1].innerHTML;
+            var description = protoEvent[2].innerHTML;
             eventList.push([d,title,description]);
             eventListDate.push(dd);
         }
@@ -282,10 +300,15 @@ function loadOverlay(day,month,year){
     backOverlay.setAttribute('onclick','removeOverlay1()');
     var eventInfo = document.createElement('div');
     eventInfo.setAttribute('id','overlayEventInfo');
+    eventInfo.setAttribute('onclick','dontRemoveOverlay(event)')
     var closeButt = document.createElement('div');
     closeButt.setAttribute('class','closeButton');
     closeButt.setAttribute('onclick','removeOverlay2(event)');
     eventInfo.appendChild(closeButt);
+    var dateDiv = document.createElement('div');
+    dateDiv.setAttribute('class','evInfDa');
+    dateDiv.innerText = day +'.'+month+'.'+year;
+    eventInfo.appendChild(dateDiv);
     var mainEventList = eventLoad(year,month);
     var eventDateList= mainEventList[1];
     var i=0;
@@ -294,17 +317,13 @@ function loadOverlay(day,month,year){
         if ( (j==-1)){
             break;
         } else {
-            var dateDiv = document.createElement('div');
-            dateDiv.setAttribute('class','evInfDa');
             var titleDiv = document.createElement('div');
             titleDiv.setAttribute('class','evInfTit');
             var infDiv = document.createElement('div');
             infDiv.setAttribute('class','evInfInf');
-            dateDiv.innerText = day +'.'+month+'.'+year;
-            titleDiv.innerText = mainEventList[0][j][1];
-            infDiv.innerText = mainEventList[0][j][2];
+            titleDiv.innerHTML = mainEventList[0][j][1];
+            infDiv.innerHTML = mainEventList[0][j][2];
             var eventInfoWrapper = document.createElement('div');
-            eventInfoWrapper.appendChild(dateDiv);
             eventInfoWrapper.appendChild(titleDiv);
             eventInfoWrapper.appendChild(infDiv);
             eventInfo.appendChild(eventInfoWrapper);
@@ -316,7 +335,11 @@ function loadOverlay(day,month,year){
     bodyTag.insertBefore(backOverlay,bodyTag.childNodes[0]);
 
 }
-
+/*The three following functions remedy the fact that an onclick-event propagates through children
+ elements and to parents*/
+function dontRemoveOverlay(e){
+    e.stopPropagation();
+}
 function removeOverlay1(){
     var alfa = document.getElementById('blackOverlay');
     var parElmAlfa=alfa.parentElement;
@@ -324,7 +347,6 @@ function removeOverlay1(){
 }
 
 function removeOverlay2(e){
-    console.log('halla')
     e.stopPropagation();
     var alfa = document.getElementById('blackOverlay');
     var parElmAlfa=alfa.parentElement;
