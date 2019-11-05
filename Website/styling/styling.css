@@ -1,3 +1,4 @@
+/*General styling*/
 html, body {
     margin: 0;
     padding: 0;
@@ -45,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: rgb(59, 56, 56);
 }
 
-
+/*Styling Slideshow*/
 .fadein {
     position:relative;
     height:400px;
@@ -70,6 +71,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 20px;
 }
 
+/*Styling submission*/
 form {
     width : 100%;
     padding-top: 10px;
@@ -96,6 +98,7 @@ input[type=submit] {
     background-color: rgba(164, 52, 26, 0.8);
 }
 
+/*About page*/
 .mainParagraf::first-letter{
     font-size: 200%;
 }
@@ -103,21 +106,22 @@ input[type=submit] {
     text-indent: 20px;
 }
 
+/*Blog*/
 #wrapper #overskrift {
-    position: relative;
+    /*position: relative;*/
+    text-align: center;
 }
 
 #wrapper #overskrift h2 {
-    margin: 0;
+    /*margin: 0;
     position: absolute;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);*/
     font-size: 45px;
 }
 
 #blogtable {
-    padding-top: 70px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -172,7 +176,7 @@ input[type=submit] {
     font-style: italic;
 
 }
-
+/*Front page blog*/
 .blognews {
     position: relative;
     width: 50%;
@@ -206,4 +210,63 @@ input[type=submit] {
 .blognews p {
     padding-left: 12px;
     font-size: 16px;
+}
+/*Blog alternative*/
+#blogDiv{
+    margin-bottom: 5px;
+}
+.blogArticle {
+    position: relative;
+    border-bottom: 1px solid grey;
+    min-height: 100px;
+    margin-top:10px;
+}
+#blogDiv .school:before {
+    content:' ';
+    background-image: url("../img/icon.png");
+}
+#blogDiv .headmaster:before {
+    content:' ';
+    background-image: url("../img/Person1.png");
+}
+#blogDiv .headmaster:before, #blogDiv .school:before {
+    content:' ';
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top:0;
+    left:10px;
+    width: 80px;
+    height: 80px;
+}
+.blogArticle .blogArticleTitle {
+    text-align: center;
+    min-height: 70px;
+    position: relative;
+    cursor: pointer;
+}
+.blogArticleDate {
+    position: absolute;
+    top:5px;
+    right:0;
+}
+.blogArticleBody {
+    padding-left: 19px;
+    border-left: 1px solid rgb(169,209,142);
+    margin-left: 50px;
+}
+.blogArticleDate p {
+    color: grey;
+    font-style: italic;
+}
+.blogArticleTitle h3 {
+    font-size:24px;
+    font-weight: normal;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
 }

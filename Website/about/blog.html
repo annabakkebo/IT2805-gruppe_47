@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!--Following base tag makes sure that all relative links will be relative to the main page-->
-    <base href="https://folk.ntnu.no/endresr/laescuela/Website/index.html">
+    <base href="http://localhost:63342/IT2805-gruppe_47/Website/index.html">
     <meta charset="UTF-8">
     <title>Blog</title>
     <link rel="stylesheet" type="text/css" href="styling/styling.css">
@@ -12,12 +12,22 @@
     <script src="script/footer.js"></script>
     <script src="script/infoGet.js"></script>
     <link rel="icon" href="img/icon.png">
-
+    <script>
+        function toggleDisp(elmt){
+            var b = elmt.parentElement;
+            var a = b.querySelector('.blogArticleBody');
+            if (a.style.display==="none"){
+                a.style.display='block'
+            }
+            else {
+                a.style.display='none'
+            }
+        }
+    </script>
 </head>
 <body>
 <div id="wrapper">
     <div id="overskrift"><h2>Blog</h2></div>
-    <script>infoGet1()</script>
     <table id="blogtable">
         <tr>
             <td class="principal"></td>
@@ -62,6 +72,156 @@
 
     </table>
 
+    Nytt forslag
+
+    <div id="blogDiv">
+        <div class="blogArticle headmaster">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Have a nice excursion!</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>27.09.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+                <p>
+                    Quisque tempus sit amet metus nec imperdiet. Morbi fermentum urna felis, vitae maximus magna
+                    porttitor fringilla. Donec id iaculis leo. Proin quis sagittis ex, vitae consequat sapien.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris
+                    ultricies elit eget pulvinar dapibus. Aliquam quis nibh velit. Etiam tempus magna et justo tempor,
+                    nec accumsan purus tempor. Donec vulputate convallis velit eu tempus. Vestibulum imperdiet
+                    condimentum lorem, nec bibendum tellus porta vitae.
+                </p>
+                <p>
+                    Sed non enim elementum, consectetur erat a, viverra orci. Etiam scelerisque tortor sit amet laoreet
+                    auctor. Nunc vestibulum tortor nec nulla pellentesque pulvinar. Fusce porta, sem tristique
+                    condimentum tincidunt, ante odio molestie neque, eu molestie augue velit molestie lorem. Nunc
+                    volutpat rhoncus varius. Vivamus porta ante vel mattis hendrerit. Duis odio mauris, efficitur et
+                    imperdiet sed, pharetra in dolor.
+                </p>
+            </div>
+        </div>
+        <div class="blogArticle school">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Fall excursion!</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>02.09.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+            </div>
+        </div>
+        <div class="blogArticle headmaster">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Welcome to open day</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>01.09.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+                <p>
+                    Quisque tempus sit amet metus nec imperdiet. Morbi fermentum urna felis, vitae maximus magna
+                    porttitor fringilla. Donec id iaculis leo. Proin quis sagittis ex, vitae consequat sapien.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris
+                    ultricies elit eget pulvinar dapibus. Aliquam quis nibh velit. Etiam tempus magna et justo tempor,
+                    nec accumsan purus tempor. Donec vulputate convallis velit eu tempus. Vestibulum imperdiet
+                    condimentum lorem, nec bibendum tellus porta vitae.
+                </p>
+            </div>
+        </div>
+        <div class="blogArticle school">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Parent teacher conference</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>27.08.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+            </div>
+        </div>
+        <div class="blogArticle headmaster">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Welcome to a new school year!</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>20.08.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+                <p>
+                    Quisque tempus sit amet metus nec imperdiet. Morbi fermentum urna felis, vitae maximus magna
+                    porttitor fringilla. Donec id iaculis leo. Proin quis sagittis ex, vitae consequat sapien.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris
+                    ultricies elit eget pulvinar dapibus. Aliquam quis nibh velit. Etiam tempus magna et justo tempor,
+                    nec accumsan purus tempor. Donec vulputate convallis velit eu tempus. Vestibulum imperdiet
+                    condimentum lorem, nec bibendum tellus porta vitae.
+                </p>
+                <p>
+                    Sed non enim elementum, consectetur erat a, viverra orci. Etiam scelerisque tortor sit amet laoreet
+                    auctor. Nunc vestibulum tortor nec nulla pellentesque pulvinar. Fusce porta, sem tristique
+                    condimentum tincidunt, ante odio molestie neque, eu molestie augue velit molestie lorem. Nunc
+                    volutpat rhoncus varius. Vivamus porta ante vel mattis hendrerit. Duis odio mauris, efficitur et
+                    imperdiet sed, pharetra in dolor.
+                </p>
+                <p>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam malesuada
+                    nisi in lacus egestas gravida. Mauris et accumsan diam. Morbi efficitur ligula et mattis pulvinar.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus
+                    maximus ac purus ut congue. Nunc scelerisque luctus eros. Interdum et malesuada fames ac ante ipsum
+                    primis in faucibus. Pellentesque vel turpis ac nunc condimentum pellentesque. Sed sed urna at sapien
+                    euismod cursus nec ut purus. Duis fringilla tincidunt vestibulum.
+                </p>
+            </div>
+        </div>
+
+        <div class="blogArticle headmaster">
+            <div class="blogArticleTitle" onclick="toggleDisp(this)">
+                <h3>Application deadline 2019/2020</h3>
+            </div>
+            <div class="blogArticleDate">
+                <p>17.07.2019</p>
+            </div>
+            <div class="blogArticleBody" style="display: none;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis posuere nisl, ut
+                    finibus neque. Phasellus non ornare nisl. Quisque in nunc congue, pulvinar est at, facilisis tellus.
+                    Aliquam erat volutpat. Donec erat quam, laoreet ac lorem scelerisque, imperdiet ultrices velit.
+                    Cras id facilisis metus, a consequat justo. Mauris lacus sapien, porttitor sit amet molestie sed,
+                    porta id sem.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>loadFooter()</script>
