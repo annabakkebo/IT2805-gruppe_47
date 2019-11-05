@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .fadein {
     position:relative;
-    height:332px;
+    height:400px;
     width:100%;
     outline: 1px solid blue;
 }
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, p {
     top: 0;
     transition: opacity 1s;
     opacity: 1;
-    height: 332px;
+    height: 100%;
     width:100%;
 }
 
