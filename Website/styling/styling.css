@@ -106,18 +106,18 @@ input[type=submit] {
     text-indent: 20px;
 }
 
-/*Blog outdated*/
-/*#wrapper #overskrift {
-    position: relative;
+/*Blog*/
+#wrapper #overskrift {
+    /*position: relative;*/
     text-align: center;
 }
 
 #wrapper #overskrift h2 {
-    margin: 0;
+    /*margin: 0;
     position: absolute;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);*/
     font-size: 45px;
 }
 
@@ -175,7 +175,7 @@ input[type=submit] {
     color: grey;
     font-style: italic;
 
-}*/
+}
 /*Front page blog*/
 .blognews {
     position: relative;
@@ -211,6 +211,7 @@ input[type=submit] {
     padding-left: 12px;
     font-size: 16px;
     height: auto;
+    white-space: normal;
 }
 /*Blog alternative*/
 #blogDiv{
