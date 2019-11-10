@@ -48,10 +48,24 @@
         The application.js was removed entirely, as the admission/index.html handled all of the necessary data for the
         application scheme. The languageChange.js was also removed entirely, because we found out that the added
         complexity of making the site bilingual was not worth all the extra work involved. It would also make the code
-        harder to navigate, as we would have to add a norwegian and english equivalence at each string-point.
-
+        harder to navigate, as we would have to add a norwegian and english equivalence at each string-point.The
+        application infoGet.js was removed entirely, as in the end we did not have a script functionality for taking
+        information from the blog page to the front-page. The reason for not implementing this functionality was
+        mainly that we needed to use functionality that was to advanced (like XHTML-request).
     </p>
+
     <h3>Design and functionality</h3>
+    <h4>Index-page</h4>
+    <p> Removed the functionality of retrieving information from other pages and posting it on the front page.
+        This was considered to advanced without database/server/php, thus it was scrapped in the design. Instead
+        of a script that retrieves the first x chars or words from the three latest blog post, there will be
+        the blog articles manually written.</p>
+    <h4>Slideshow</h4>
+    <p> Removed the quotes above the slideshow pictures, as they did not look as professional as we wanted them
+        to be.</p>
+    <h4>About</h4>
+    <p>Removed the list of facilities, as this could easily be included in the text about the school.</p>
+
     <h4>Calendar</h4>
     <p>The calendar has a few changes to the design, a couple added functionalities and one removed functionality. The
     site-wide (as in both in "index.html" and "about/calendar.html") added functionality is that it is made a "pop-up"
@@ -107,7 +121,6 @@
             <ul>
                 <li>navBar.js</li>
                 <li>footer.js</li>
-                <li>infoGet.js</li>
                 <li>slide.js</li>
                 <li>calendar.js</li>
                 <li>contact.js</li>
