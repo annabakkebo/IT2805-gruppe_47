@@ -33,7 +33,8 @@ function loadSlideshow1() {
     fadein.querySelector(':nth-child(1)').classList.remove('is-hidden');
     slideshow.appendChild( fadein);
     fadein.addEventListener('transitionend',function () {
-    fadein.insertBefore(fadein.querySelector(':first-child.is-hidden'),null);
+        if(fadein.querySelector(':first-child.is-hidden'))
+            fadein.insertBefore(fadein.querySelector(':first-child.is-hidden'), null);
     });
     setInterval(function () {
         fadein.querySelector(':first-child').classList.add('is-hidden');
