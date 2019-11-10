@@ -22,6 +22,7 @@ body {
     display: block;
     min-height: calc(100% - 146px - 63px);
 }
+
 h1 {
     font-size: 30px;
 }
@@ -190,7 +191,13 @@ input[type=submit] {
     padding-left: 12px;
     margin: auto;
     font-size: 18px;
+
 }
+.blognews h2 a{
+    color: inherit;
+}
+
+
 .blognews .pic img {
     position: absolute;
     display: block;
